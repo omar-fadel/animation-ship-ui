@@ -2,11 +2,19 @@ import { useMemo } from 'react';
 import StyledTypography from './SyledTypography';
 import { TypographyProps } from './TypographyProps';
 
-const Typography: React.FC<TypographyProps> = (props) => {
-  const Component = useMemo(() => {
-    return StyledTypography(props.variant);
-  }, [props.variant]);
-  return <Component {...props} />;
+const Typography: React.FC<TypographyProps> = ({
+  variant,
+  align = 'left',
+  bold = false,
+  color = 'black',
+  children,
+}) => {
+  const Component = StyledTypography(variant);
+  return (
+    <Component variant={variant} align={align} bold={bold} color={color}>
+      {children}
+    </Component>
+  );
 };
 
 export default Typography;
