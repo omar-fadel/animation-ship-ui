@@ -23,7 +23,12 @@
     /* Declarations */
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "dist/types"
+    "declarationDir": "dist/types",
+    /** Paths */
+    "baseUrl": "./",
+    "paths": {
+      "@atoms/*": ["src/components/Atoms/*"]
+    }
   },
   "include": ["src"]
 }
