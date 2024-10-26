@@ -11,6 +11,7 @@ export default meta;
 
 export const Primary: StoryObj<typeof meta> = {
   args: {
-    label: 'Hello',
+    children: 'Hello',
+    isRed: false,
   },
 };

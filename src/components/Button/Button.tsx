@@ -1,14 +1,23 @@
+import clsx from 'clsx';
 import styled from 'styled-components';
 
 export interface ButtonProps {
-  label: string;
+  isRed: boolean;
+  children: string;
 }
 
-const StyledButton = styled.button`
-  @apply rounded px-4 py-2;
-`;
-const Button: React.FC<ButtonProps> = ({ label }) => {
-  return <StyledButton className="bg-teal-400">{label}</StyledButton>;
+const styledClassName = 'bg-red-500';
+const greenClassName = 'bg-green-500';
+
+const StyledButton = styled.button.attrs<ButtonProps>((props) => ({
+  className: clsx({
+    [`${styledClassName}`]: props.isRed,
+    [`${greenClassName}`]: !props.isRed,
+  }),
+}))``;
+
+const Button: React.FC<ButtonProps> = ({ children, isRed }) => {
+  return <StyledButton isRed={isRed}>{children}</StyledButton>;
 };
 
 export default Button;
