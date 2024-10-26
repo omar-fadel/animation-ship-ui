@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import StyledTypography from './SyledTypography';
 import { TypographyProps } from './TypographyProps';
 

@@ -27,7 +27,8 @@
     /** Paths */
     "baseUrl": "./",
     "paths": {
-      "@atoms/*": ["src/components/Atoms/*"]
+      "@atoms/*": ["src/components/Atoms/*"],
+      "@templates/*": ["src/components/Templates/*"]
     }
   },
   "include": ["src"]
