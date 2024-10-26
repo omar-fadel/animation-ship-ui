@@ -1,1 +1,1 @@
-{"root":["./src/main.ts","./src/vite-env.d.ts","./src/components/button/button.stories.tsx","./src/components/button/button.tsx"],"version":"5.6.3"}
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/components/atoms/typography/syledtypography.ts","./src/components/atoms/typography/typographyprops.ts","./src/components/atoms/typography/index.tsx","./src/components/templates/threecolumnfullsizemid.tsx","./src/stories/atoms/typography.stories.tsx","./src/stories/templates/threecolumnfullsizemid.stories.tsx","./src/themes/primex.ts"],"version":"5.6.3"}

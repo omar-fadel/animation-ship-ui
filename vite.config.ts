@@ -22,6 +22,7 @@ export default defineConfig({
     alias: {
       '@atoms': path.resolve(__dirname, 'src/components/Atoms'),
       '@templates': path.resolve(__dirname, 'src/components/Templates'),
+      '@molecules': path.resolve(__dirname, 'src/components/Molecules'),
     },
   },
   plugins: [
