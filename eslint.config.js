@@ -7,12 +7,10 @@ import prettier from "eslint-plugin-prettier";
 
 export default tseslint.config(
   { ignores: ["dist"] },
-  // eslintPluginPrettier,
   {
     extends: [
       js.configs.recommended,
       ...tseslint.configs.recommended,
-      "plugin:prettier/recommended",
     ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -32,5 +30,5 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
     },
-  },
+  }
 );
