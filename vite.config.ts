@@ -17,5 +17,17 @@ export default defineConfig({
       external: ['react'],
     },
   },
-  plugins: [react(), dts({ tsconfigPath: './tsconfig.app.json' })],
+  plugins: [
+    react({
+      plugins: [
+        [
+          '@swc/plugin-styled-components',
+          {
+            displayName: true,
+          },
+        ],
+      ],
+    }),
+    dts({ tsconfigPath: './tsconfig.app.json' }),
+  ],
 });
