@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/index.es.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/animation-ship-ui.es.js",
+  "module": "dist/animation-ship-ui.es.js",
+  "types": "dist/types/main.d.ts",
   "files": [
     "/dist"
   ],

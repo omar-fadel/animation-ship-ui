@@ -16,7 +16,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Declerations */
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "dist/types"
   },
   "include": ["vite.config.ts"]
 }

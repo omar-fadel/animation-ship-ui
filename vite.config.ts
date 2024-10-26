@@ -12,10 +12,10 @@ export default defineConfig({
       formats: ["es"],
     },
     sourcemap: true,
-    emptyOutDir: true,
+    emptyOutDir: false,
     rollupOptions: {
-      external: [],
+      external: ["react"],
     },
   },
-  plugins: [react(), dts({ tsconfigPath: "./tsconfig.json", outDir: "types" })],
+  plugins: [react(), dts()],
 });
