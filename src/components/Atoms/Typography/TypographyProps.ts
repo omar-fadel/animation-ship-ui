@@ -4,4 +4,5 @@ export interface TypographyProps {
   color?: 'primary' | 'secondary' | 'black' | 'white';
   align?: 'left' | 'center' | 'right';
   bold?: boolean;
+  className?: string;
 }

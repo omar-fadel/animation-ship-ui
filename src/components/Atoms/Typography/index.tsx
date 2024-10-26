@@ -7,10 +7,17 @@ const Typography: React.FC<TypographyProps> = ({
   bold = false,
   color = 'black',
   children,
+  className,
 }) => {
   const Component = StyledTypography(variant);
   return (
-    <Component variant={variant} align={align} bold={bold} color={color}>
+    <Component
+      className={className}
+      variant={variant}
+      align={align}
+      bold={bold}
+      color={color}
+    >
       {children}
     </Component>
   );
