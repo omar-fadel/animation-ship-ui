@@ -8,14 +8,14 @@ export default defineConfig({
     lib: {
       entry: "src/main.ts",
       name: "animation-ship",
-      fileName: (format) => `animation-ship-ui.${format}.js`,
+      fileName: "main",
       formats: ["es"],
     },
     sourcemap: true,
-    emptyOutDir: false,
+    emptyOutDir: true,
     rollupOptions: {
       external: ["react"],
     },
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts({ tsconfigPath: "./tsconfig.app.json"4 })],
 });
