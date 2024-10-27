@@ -29,10 +29,10 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
   const className = clsx(
     'transition-all duration-300 ease-in-out hover:scale-110',
     {
-      'hover:fill-primary-main fill-white': color === 'white',
-      'hover:fill-grey-main fill-black': color === 'black',
-      'hover:fill-primary-light fill-primary-main': color === 'primary',
-      'hover:fill-secondary-light fill-secondary-main': color === 'secondary',
+      'fill-white hover:fill-primary-main': color === 'white',
+      'fill-black hover:fill-grey-main': color === 'black',
+      'fill-primary-main hover:fill-primary-light': color === 'primary',
+      'fill-secondary-main hover:fill-secondary-light': color === 'secondary',
     }
   );
   return (

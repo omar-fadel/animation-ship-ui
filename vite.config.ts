@@ -15,6 +15,7 @@ export default defineConfig({
     },
     sourcemap: true,
     emptyOutDir: true,
+    ssr: true,
     rollupOptions: {
       external: ['react'],
     },
@@ -44,4 +45,7 @@ export default defineConfig({
       include: '**/*.svg?react',
     }),
   ],
+  // ssr: {
+  //   noExternal: ['react', 'react-dom'],
+  // },
 });
