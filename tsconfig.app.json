@@ -30,7 +30,8 @@
       "@atoms/*": ["src/components/Atoms/*"],
       "@templates/*": ["src/components/Templates/*"],
       "@molecules/*": ["src/components/Molecules/*"],
-      "@organisms/*": ["src/components/Organisms/*"]
+      "@organisms/*": ["src/components/Organisms/*"],
+      "@icons/*": ["src/Icons/*"]
     }
   },
   "include": ["src"]

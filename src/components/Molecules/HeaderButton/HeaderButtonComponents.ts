@@ -18,8 +18,12 @@ const commonClassName =
 export const StyledHeaderButton = styled.button.attrs<
   Pick<HeaderButtonProps, 'isActive'>
 >((props) => ({
-  className: clsx(commonClassName, {
-    [`${isActiveClassName}`]: props.isActive,
-    [`${normalClassName}`]: !props.isActive,
-  }),
+  className: clsx(
+    commonClassName,
+    {
+      [`${isActiveClassName}`]: props.isActive,
+      [`${normalClassName}`]: !props.isActive,
+    },
+    props.className
+  ),
 }))``;

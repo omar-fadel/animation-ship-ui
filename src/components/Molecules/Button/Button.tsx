@@ -16,12 +16,17 @@ export interface ButtonProps {
 const buttonClassName = 'rounded px-6 py-4';
 const StyledButton = styled.button.attrs<Pick<ButtonProps, 'color'>>(
   (props) => ({
-    className: clsx(buttonClassName, {
-      'bg-primary-main hover:bg-primary-dark': props.color === 'primary',
-      'bg-secondary-main hover:bg-secondary-dark': props.color === 'secondary',
-      'hover:bg-grey-light bg-white': props.color === 'white',
-      'hover:bg-grey-main bg-black': props.color === 'black',
-    }),
+    className: clsx(
+      buttonClassName,
+      {
+        'bg-primary-main hover:bg-primary-dark': props.color === 'primary',
+        'bg-secondary-main hover:bg-secondary-dark':
+          props.color === 'secondary',
+        'hover:bg-grey-light bg-white': props.color === 'white',
+        'hover:bg-grey-main bg-black': props.color === 'black',
+      },
+      props.className
+    ),
   })
 )``;
 

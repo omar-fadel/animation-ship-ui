@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import EmailIcon from './emailIcon.svg?react';
-import PhoneIcon from './phoneIcon.svg?react';
-import LocationIcon from './mapIcon.svg?react';
+import EmailIcon from '@icons/emailIcon.svg?react';
+import PhoneIcon from '@icons/phoneIcon.svg?react';
+import LocationIcon from '@icons/mapIcon.svg?react';
 import Typography from '@atoms/Typography';
 import clsx from 'clsx';
 import './contactText.css';

@@ -12,13 +12,17 @@ export interface ContainerProps {
 
 const BigContainer = styled.div.attrs<Pick<ContainerProps, 'backgroundColor'>>(
   (props) => ({
-    className: clsx('flex w-screen justify-center', {
-      'bg-primary-main': props.backgroundColor === 'primary',
-      'bg-secondary-main': props.backgroundColor === 'secondary',
-      'bg-white': props.backgroundColor === 'white',
-      'bg-black': props.backgroundColor === 'black',
-      'bg-grey-light': props.backgroundColor === 'grey',
-    }),
+    className: clsx(
+      'flex w-screen justify-center',
+      {
+        'bg-primary-main': props.backgroundColor === 'primary',
+        'bg-secondary-main': props.backgroundColor === 'secondary',
+        'bg-white': props.backgroundColor === 'white',
+        'bg-black': props.backgroundColor === 'black',
+        'bg-grey-light': props.backgroundColor === 'grey',
+      },
+      props.className
+    ),
   })
 )``;
 

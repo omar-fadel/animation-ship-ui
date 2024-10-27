@@ -1,9 +1,9 @@
 import React from 'react';
-import FacebookIcon from './facebook.svg?react';
-import InstagramIcon from './instagram.svg?react';
-import XIcon from './x.svg?react';
-import LinkedinIcon from './linkedIn.svg?react';
-import SnapchatIcon from './snapchat.svg?react';
+import FacebookIcon from '@icons/facebook.svg?react';
+import InstagramIcon from '@icons/instagram.svg?react';
+import XIcon from '@icons/x.svg?react';
+import LinkedinIcon from '@icons/linkedIn.svg?react';
+import SnapchatIcon from '@icons/snapchat.svg?react';
 import clsx from 'clsx';
 
 export interface SocialMediaIconProps {

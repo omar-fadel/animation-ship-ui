@@ -16,7 +16,7 @@ const mapVariantToComponent = {
 
 const StyledTypography = (variants: Variants) =>
   mapVariantToComponent[variants].attrs<TypographyProps>((props) => ({
-    className: clsx({
+    className: clsx(props.className, {
       'text-h1': props.variant === 'h1',
       'text-h2': props.variant === 'h2',
       'text-h3': props.variant === 'h3',
