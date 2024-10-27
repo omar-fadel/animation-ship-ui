@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export interface HeaderButtonProps {
   id?: string;
-  isactive: boolean;
+  isactive: string;
   text: string;
   onClick: (id?: string) => void;
 }
@@ -21,8 +21,8 @@ export const StyledHeaderButton = styled.button.attrs<
   className: clsx(
     commonClassName,
     {
-      [`${isActiveClassName}`]: props.isactive,
-      [`${normalClassName}`]: !props.isactive,
+      [`${isActiveClassName}`]: props.isactive === 'true',
+      [`${normalClassName}`]: props.isactive !== 'true',
     },
     props.className
   ),

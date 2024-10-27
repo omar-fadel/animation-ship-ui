@@ -12,7 +12,7 @@ export default meta;
 export const Primary: StoryObj<typeof meta> = {
   args: {
     backgroundImage: 'https://via.placeholder.com/150',
-    backgroundColor: 'primary',
+    backgroundcolor: 'primary',
     children: <div className="h-96 w-full" />,
   },
 };

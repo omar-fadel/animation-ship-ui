@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <nav>
-      <Container backgroundColor="white" className="px-4 py-6">
+      <Container backgroundcolor="white" className="px-4 py-6">
         <ThreeColumnFullSizeMid
           className="w-full"
           startComponent={

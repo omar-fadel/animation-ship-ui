@@ -4,29 +4,29 @@ import styled from 'styled-components';
 
 export interface ContainerProps {
   backgroundImage?: string;
-  backgroundColor?: 'primary' | 'secondary' | 'white' | 'black' | 'grey';
+  backgroundcolor?: 'primary' | 'secondary' | 'white' | 'black' | 'grey';
   className?: string;
   childrenClassName?: string;
   children: React.ReactNode;
 }
 
-const BigContainer = styled.div.attrs<Pick<ContainerProps, 'backgroundColor'>>(
+const BigContainer = styled.div.attrs<Pick<ContainerProps, 'backgroundcolor'>>(
   (props) => ({
     className: clsx(
       'flex w-screen justify-center',
       {
-        'bg-primary-main': props.backgroundColor === 'primary',
-        'bg-secondary-main': props.backgroundColor === 'secondary',
-        'bg-white': props.backgroundColor === 'white',
-        'bg-black': props.backgroundColor === 'black',
-        'bg-grey-light': props.backgroundColor === 'grey',
+        'bg-primary-main': props.backgroundcolor === 'primary',
+        'bg-secondary-main': props.backgroundcolor === 'secondary',
+        'bg-white': props.backgroundcolor === 'white',
+        'bg-black': props.backgroundcolor === 'black',
+        'bg-grey-light': props.backgroundcolor === 'grey',
       },
       props.className
     ),
   })
 )``;
 
-const ChildrenContainer = styled.div<Omit<ContainerProps, 'backgroundColor'>>`
+const ChildrenContainer = styled.div<Omit<ContainerProps, 'backgroundcolor'>>`
   max-width: 90rem;
   width: 100%;
   background-image: url(${(props) => props.backgroundImage});
@@ -38,11 +38,11 @@ export const Container: React.FC<ContainerProps> = ({
   children,
   className,
   backgroundImage,
-  backgroundColor,
+  backgroundcolor,
   childrenClassName,
 }) => {
   return (
-    <BigContainer backgroundColor={backgroundColor} className={className}>
+    <BigContainer backgroundcolor={backgroundcolor} className={className}>
       <ChildrenContainer
         childrenClassName={childrenClassName}
         backgroundImage={backgroundImage}
