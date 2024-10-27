@@ -4,7 +4,7 @@ import {
 } from './HeaderButtonComponents';
 
 const HeaderButton: React.FC<HeaderButtonProps> = ({
-  isActive,
+  isactive,
   text,
   onClick,
   id,
@@ -14,7 +14,7 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({
       onClick={() => {
         onClick(id);
       }}
-      isActive={isActive}
+      isactive={isactive}
     >
       {text}
     </StyledHeaderButton>

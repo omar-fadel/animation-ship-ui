@@ -14,12 +14,15 @@ import SpaceBetween from '@templates/SpaceBetween';
 import Stack from '@templates/Stack';
 import ThreeColumnFullSizeMid from '@templates/ThreeColumnFullSizeMid';
 import TwoHalf from '@templates/TwoHalfs';
+import Header from '@organisms/Header';
+import HeaderList from '@organisms/HeaderList';
 import primeX from './themes/primeX';
 
-const Library = {
-  Themes: {
-    primeX,
-  },
+const Theme = {
+  primeX,
+};
+
+export {
   Typography,
   BorderContainer,
   SocialMediaIcon,
@@ -36,6 +39,7 @@ const Library = {
   SpaceBetween,
   Stack,
   TwoHalf,
+  Theme,
+  Header,
+  HeaderList,
 };
-
-export default Library;

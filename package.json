@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "dev": "storybook dev -p 6006",
+    "build-dev": "tsc -b && vite build && node script.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -47,6 +48,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
     "eslint-plugin-storybook": "^0.10.1",
+    "fs-extra": "^11.2.0",
     "globals": "^15.11.0",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",

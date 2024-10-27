@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface ContainerProps {
-  backgroundImage: string;
+  backgroundImage?: string;
   backgroundColor?: 'primary' | 'secondary' | 'white' | 'black' | 'grey';
   className?: string;
   childrenClassName?: string;

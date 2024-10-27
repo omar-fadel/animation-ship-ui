@@ -15,14 +15,14 @@ const meta = {
 
 export default meta;
 
-export const EN: StoryObj<typeof meta> = {
+export const en: StoryObj<typeof meta> = {
   args: {
-    language: 'EN',
+    language: 'en',
   },
 };
 
-export const AR: StoryObj<typeof meta> = {
+export const ar: StoryObj<typeof meta> = {
   args: {
-    language: 'AR',
+    language: 'ar',
   },
 };

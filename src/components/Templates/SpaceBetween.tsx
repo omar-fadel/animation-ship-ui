@@ -4,6 +4,7 @@ const SpaceBetween = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
 `;
 
 export default SpaceBetween;

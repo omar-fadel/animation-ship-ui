@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
 const ThreeColumnFullSizeMidComponent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  & > :nth-child(2) {
-    flex-grow: 1;
-  }
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
 `;
 
 export interface ThreeColumnFullSizeMidProps {
@@ -23,9 +19,13 @@ const ThreeColumnFullSizeMid: React.FC<ThreeColumnFullSizeMidProps> = ({
 }) => {
   return (
     <ThreeColumnFullSizeMidComponent className={className}>
-      {startComponent}
-      {middleComponent}
-      {endComponent}
+      <div className="col-span-3 flex items-center">{startComponent}</div>
+      <div className="col-span-6 flex justify-center gap-[1rem]">
+        {middleComponent}
+      </div>
+      <div className="col-span-1 flex items-center justify-end">
+        {endComponent}
+      </div>
     </ThreeColumnFullSizeMidComponent>
   );
 };
