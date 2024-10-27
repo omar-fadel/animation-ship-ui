@@ -1,0 +1,28 @@
+.contactTextWhite:hover > #icon {
+  @apply fill-primary-main;
+}
+.contactTextWhite:hover > :nth-child(2) {
+  @apply text-primary-main;
+}
+
+.contactTextBlack:hover > #icon {
+  @apply fill-secondary-main;
+}
+.contactTextBlack:hover > :nth-child(2) {
+  @apply text-secondary-main;
+}
+
+.contactTextPrimary:hover > #icon {
+  @apply fill-primary-light;
+}
+.contactTextPrimary:hover > :nth-child(2) {
+  @apply text-primary-light;
+}
+
+.contactTextSecondary:hover > #icon {
+  @apply fill-secondary-light;
+}
+
+.contactTextSecondary:hover > :nth-child(2) {
+  @apply text-secondary-light;
+}

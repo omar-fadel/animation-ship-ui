@@ -4,40 +4,65 @@ const primeX: Config['theme'] = {
   extend: {
     colors: {
       primary: {
-        light: '#FFD7D9',
-        main: '#E32228',
-        dark: '#A80D12',
+        light: 'var(--color-primary-light, #FFD7D9)',
+        main: 'var(--color-primary-main, #E32228)',
+        dark: 'var(--color-primary-dark, #A80D12)',
       },
       secondary: {
-        main: '#660F14',
-        light: '#FFD7D9',
-        dark: '#A80D12',
+        main: 'var(--color-secondary-main, #660F14)',
+        light: 'var(--color-secondary-light, #FFD7D9)',
+        dark: 'var(--color-secondary-dark, #A80D12)',
       },
       grey: {
-        light: '#F5F5F5',
-        main: '#757575',
-        dark: '#424242',
+        light: 'var(--color-grey-light, #F5F5F5)',
+        main: 'var(--color-grey-main, #757575)',
+        dark: 'var(--color-grey-dark, #424242)',
       },
     },
     fontSize: {
       h1: [
-        '3.75rem',
+        'var(--font-size-h1, 3.75rem)',
         {
-          fontWeight: '700',
+          fontWeight: 'var(--font-weight-h1, 700)',
         },
       ],
       h2: [
-        '3rem',
+        'var(--font-size-h2, 3rem)',
         {
-          fontWeight: '700',
+          fontWeight: 'var(--font-weight-h2, 700)',
         },
       ],
-      h3: ['1.875rem', { fontWeight: '400' }],
-      h4: ['1.5rem', { fontWeight: '400' }],
-      h5: ['1.125rem', { fontWeight: '700' }],
-      h6: '1.5rem',
-      body1: ['1.25rem', { fontWeight: '400' }],
-      body2: ['0.75rem', { fontWeight: '400' }],
+      h3: [
+        'var(--font-size-h3, 1.875rem)',
+        {
+          fontWeight: 'var(--font-weight-h3, 400)',
+        },
+      ],
+      h4: [
+        'var(--font-size-h4, 1.5rem)',
+        {
+          fontWeight: 'var(--font-weight-h4, 400)',
+        },
+      ],
+      h5: [
+        'var(--font-size-h5, 1.125rem)',
+        {
+          fontWeight: 'var(--font-weight-h5, 700)',
+        },
+      ],
+      h6: 'var(--font-size-h6, 1.5rem)',
+      body1: [
+        'var(--font-size-body1, 1.25rem)',
+        {
+          fontWeight: 'var(--font-weight-body1, 400)',
+        },
+      ],
+      body2: [
+        'var(--font-size-body2, 0.75rem)',
+        {
+          fontWeight: 'var(--font-weight-body2, 400)',
+        },
+      ],
     },
   },
 };

@@ -24,6 +24,7 @@ export default defineConfig({
       '@atoms': path.resolve(__dirname, 'src/components/Atoms'),
       '@templates': path.resolve(__dirname, 'src/components/Templates'),
       '@molecules': path.resolve(__dirname, 'src/components/Molecules'),
+      '@organisms': path.resolve(__dirname, 'src/components/Organisms'),
     },
   },
   plugins: [

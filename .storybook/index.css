@@ -19,3 +19,15 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+:root {
+  --color-primary-light: #FFD7D9;
+  --color-primary-dark: #A80D12;
+  --color-primary-main: #E32228;
+  --color-secondary-main: #660F14;
+  --color-secondary-dark: #A80D12;
+  --color-secondary-light: #FFD7D9;
+  --color-grey-light: #F5F5F5;
+  --color-grey-dark: #424242;
+  --color-grey-main: #757575;
+}

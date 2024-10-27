@@ -1,0 +1,11 @@
+<svg width="12" height="11" viewBox="0 0 12 11" xmlns="http://www.w3.org/2000/svg">
+    <g id="Layer_1" clip-path="url(#clip0_70_625)">
+        <path id="Vector" fill-rule="evenodd" clip-rule="evenodd"
+            d="M0 0L2.28488 9.17846L6.71512 7.74598L2.75581 2.86495L7.86628 7.40997L12.0174 6.10129L0 0ZM6.85465 11V8.47106L5.38953 8.91318L6.85465 11Z" />
+    </g>
+    <defs>
+        <clipPath id="clip0_70_625">
+            <rect width="12" height="11" />
+        </clipPath>
+    </defs>
+</svg>
