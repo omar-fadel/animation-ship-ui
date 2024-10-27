@@ -8,12 +8,18 @@ export interface HeaderButtonProps {
   onClick: (id?: string) => void;
 }
 
-const isActiveClassName = 'bg-primary-main font-bold text-white rounded-lg';
-const normalClassName = 'px-2 py-2 text-black';
+const isActiveClassName = 'bg-primary-main font-bold text-white';
+
+const normalClassName = ' text-black hover:bg-primary-light';
+
+const commonClassName =
+  'transition-all duration-300 ease-in-out px-6 py-2 rounded-full';
+
 export const StyledHeaderButton = styled.button.attrs<
   Pick<HeaderButtonProps, 'isActive'>
 >((props) => ({
-  className: clsx(normalClassName, {
+  className: clsx(commonClassName, {
     [`${isActiveClassName}`]: props.isActive,
+    [`${normalClassName}`]: !props.isActive,
   }),
 }))``;
