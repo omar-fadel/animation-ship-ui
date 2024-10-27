@@ -34,12 +34,11 @@ const primeX: Config['theme'] = {
       ],
       h3: ['1.875rem', { fontWeight: '400' }],
       h4: ['1.5rem', { fontWeight: '400' }],
-      h5: ['1.125rem', { fontWeight: '400' }],
+      h5: ['1.125rem', { fontWeight: '700' }],
       h6: '1.5rem',
       body1: ['1.25rem', { fontWeight: '400' }],
       body2: ['0.75rem', { fontWeight: '400' }],
     },
   },
 };
-
 export default primeX;

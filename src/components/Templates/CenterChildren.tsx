@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const CenterChildren = styled.div`
+const CenterChildren = styled.div<{ isColumn?: boolean }>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.isColumn ? 'column' : 'row')};
   justify-content: center;
   align-items: center;
 `;
