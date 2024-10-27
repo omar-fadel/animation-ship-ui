@@ -15,15 +15,17 @@ const normalClassName = ' text-black hover:bg-primary-light';
 const commonClassName =
   'transition-all duration-300 hover:scale-110 ease-in-out px-6 py-2 rounded-full';
 
-export const StyledHeaderButton = styled.button.attrs<
-  Pick<HeaderButtonProps, 'isactive'>
->((props) => ({
-  className: clsx(
-    commonClassName,
-    {
-      [`${isActiveClassName}`]: props.isactive === 'true',
-      [`${normalClassName}`]: props.isactive !== 'true',
-    },
-    props.className
-  ),
-}))``;
+export const StyledHeaderButton = styled.button
+  .attrs<Pick<HeaderButtonProps, 'isactive'>>((props) => ({
+    className: clsx(
+      commonClassName,
+      {
+        [`${isActiveClassName}`]: props.isactive === 'true',
+        [`${normalClassName}`]: props.isactive !== 'true',
+      },
+      props.className
+    ),
+  }))
+  .withConfig({
+    shouldForwardProp: (prop) => !['isactive'].includes(prop),
+  })``;

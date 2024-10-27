@@ -15,25 +15,29 @@ const mapVariantToComponent = {
 };
 
 const StyledTypography = (variants: Variants) =>
-  mapVariantToComponent[variants].attrs<TypographyProps>((props) => ({
-    className: clsx(props.className, {
-      'text-h1': props.variant === 'h1',
-      'text-h2': props.variant === 'h2',
-      'text-h3': props.variant === 'h3',
-      'text-h4': props.variant === 'h4',
-      'text-h5': props.variant === 'h5',
-      'text-h6': props.variant === 'h6',
-      'text-body1': props.variant === 'body1',
-      'text-body2': props.variant === 'body2',
-      'text-primary-main': props.color === 'primary',
-      'text-secondary-main': props.color === 'secondary',
-      'text-left': props.align === 'left',
-      'text-center': props.align === 'center',
-      'text-right': props.align === 'right',
-      'font-bold': props.bold === 'true',
-      'text-white': props.color === 'white',
-      'text-black': props.color === 'black',
-    }),
-  }))``;
+  mapVariantToComponent[variants]
+    .attrs<TypographyProps>((props) => ({
+      className: clsx(props.className, {
+        'text-h1': props.variant === 'h1',
+        'text-h2': props.variant === 'h2',
+        'text-h3': props.variant === 'h3',
+        'text-h4': props.variant === 'h4',
+        'text-h5': props.variant === 'h5',
+        'text-h6': props.variant === 'h6',
+        'text-body1': props.variant === 'body1',
+        'text-body2': props.variant === 'body2',
+        'text-primary-main': props.color === 'primary',
+        'text-secondary-main': props.color === 'secondary',
+        'text-left': props.align === 'left',
+        'text-center': props.align === 'center',
+        'text-right': props.align === 'right',
+        'font-bold': props.bold === 'true',
+        'text-white': props.color === 'white',
+        'text-black': props.color === 'black',
+      }),
+    }))
+    .withConfig({
+      shouldForwardProp: (prop) => !['variant'].includes(prop),
+    })``;
 
 export default StyledTypography;

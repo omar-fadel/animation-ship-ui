@@ -10,8 +10,8 @@ export interface ContainerProps {
   children: React.ReactNode;
 }
 
-const BigContainer = styled.div.attrs<Pick<ContainerProps, 'backgroundcolor'>>(
-  (props) => ({
+const BigContainer = styled.div
+  .attrs<Pick<ContainerProps, 'backgroundcolor'>>((props) => ({
     className: clsx(
       'flex w-screen justify-center',
       {
@@ -23,8 +23,10 @@ const BigContainer = styled.div.attrs<Pick<ContainerProps, 'backgroundcolor'>>(
       },
       props.className
     ),
-  })
-)``;
+  }))
+  .withConfig({
+    shouldForwardProp: (prop) => !['backgroundcolor'].includes(prop),
+  })``;
 
 const ChildrenContainer = styled.div<Omit<ContainerProps, 'backgroundcolor'>>`
   max-width: 90rem;
