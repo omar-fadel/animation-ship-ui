@@ -26,7 +26,7 @@ const Typography: React.FC<TypographyProps> = ({
       className={className}
       variant={variant}
       align={align}
-      bold={bold || ''}
+      bold={bold ? 'true' : 'false'}
       color={color}
     >
       {children}

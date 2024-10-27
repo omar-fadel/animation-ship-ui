@@ -3,6 +3,6 @@ export interface TypographyProps {
   children: React.ReactNode;
   color?: 'primary' | 'secondary' | 'black' | 'white';
   align?: 'left' | 'center' | 'right';
-  bold?: boolean;
+  bold?: 'true' | 'false';
   className?: string;
 }

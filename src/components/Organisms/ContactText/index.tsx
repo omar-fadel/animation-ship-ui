@@ -50,7 +50,7 @@ const ContactText: React.FC<ContactTextProps> = ({ text, type, color }) => {
         className={iconClassName}
         style={{ width: '1rem', height: '1rem' }}
       />
-      <Typography color={color} variant="body2" bold>
+      <Typography color={color} variant="body2" bold="true">
         {text}
       </Typography>
     </ContactTextContainer>

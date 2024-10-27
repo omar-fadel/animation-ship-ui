@@ -17,33 +17,25 @@ import TwoHalf from '@templates/TwoHalfs';
 import primeX from './themes/primeX';
 
 const Library = {
-  Atoms: {
-    Typography,
-    BorderContainer,
-    SocialMediaIcon,
-  },
-  Molecules: {
-    Button,
-    HeaderButton,
-    IconBox,
-    LanguageButton,
-  },
-  Organisms: {
-    ContactText,
-  },
-  Templates: {
-    ThreeColumnFullSizeMid,
-    AlignChildrenMid,
-    CenterChildren,
-    Container,
-    SpaceAround,
-    SpaceBetween,
-    Stack,
-    TwoHalf,
-  },
   Themes: {
     primeX,
   },
+  Typography,
+  BorderContainer,
+  SocialMediaIcon,
+  Button,
+  HeaderButton,
+  IconBox,
+  LanguageButton,
+  ContactText,
+  ThreeColumnFullSizeMid,
+  AlignChildrenMid,
+  CenterChildren,
+  Container,
+  SpaceAround,
+  SpaceBetween,
+  Stack,
+  TwoHalf,
 };
 
 export default Library;

@@ -30,7 +30,7 @@ const StyledTypography = (variants: Variants) =>
       'text-left': props.align === 'left',
       'text-center': props.align === 'center',
       'text-right': props.align === 'right',
-      'font-bold': props.bold,
+      'font-bold': props.bold === 'true',
       'text-white': props.color === 'white',
       'text-black': props.color === 'black',
     }),
