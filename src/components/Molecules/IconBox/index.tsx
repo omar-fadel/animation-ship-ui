@@ -31,7 +31,7 @@ const IconBox: React.FC<IconBoxProps> = ({
   },
 }) => {
   return (
-    <Stack justifyEnd={false}>
+    <Stack justify="center">
       <StyledBorderContainer color={color} width={width} height={height}>
         {icon}
       </StyledBorderContainer>
