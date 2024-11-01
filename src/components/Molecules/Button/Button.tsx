@@ -22,8 +22,8 @@ const StyledButton = styled.button.attrs<Pick<ButtonProps, 'color'>>(
         'bg-primary-main hover:bg-primary-dark': props.color === 'primary',
         'bg-secondary-main hover:bg-secondary-dark':
           props.color === 'secondary',
-        'hover:bg-grey-light bg-white': props.color === 'white',
-        'hover:bg-grey-main bg-black': props.color === 'black',
+        'bg-white hover:bg-grey-light': props.color === 'white',
+        'bg-black hover:bg-grey-main': props.color === 'black',
       },
       props.className
     ),
