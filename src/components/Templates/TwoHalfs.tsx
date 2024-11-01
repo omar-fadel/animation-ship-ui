@@ -6,6 +6,7 @@ const TwoHalfContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   gap: 3.5rem;
+  height: 100%;
   & > :nth-child(1) {
     display: flex;
     justify-content: end;
@@ -18,11 +19,14 @@ const TwoHalfContainer = styled.div`
   }
 `;
 
-const Child = styled.div<{ isStart?: boolean }>`
+const Child = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['isStart'].includes(prop),
+})<{ isStart?: boolean }>`
   display: flex;
   justify-content: ${(props) => (props.isStart ? 'flex-end' : 'flex-start')};
   align-items: center;
   width: 100%;
+  height: 100%;
 `;
 
 export interface TwoHalfProps {

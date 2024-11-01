@@ -1,3 +1,4 @@
+'use client';
 import BorderContainer from '@atoms/BorderContainer';
 import SocialMediaIcon from '@atoms/SocialMediaIcon';
 import Typography from '@atoms/Typography';

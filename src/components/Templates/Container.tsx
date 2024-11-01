@@ -28,7 +28,9 @@ const BigContainer = styled.div
     shouldForwardProp: (prop) => !['backgroundcolor'].includes(prop),
   })``;
 
-const ChildrenContainer = styled.div<Omit<ContainerProps, 'backgroundcolor'>>`
+const ChildrenContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['backgroundImage'].includes(prop),
+})<Omit<ContainerProps, 'backgroundcolor'>>`
   max-width: 90rem;
   width: 100%;
   background-image: url(${(props) => props.backgroundImage});
