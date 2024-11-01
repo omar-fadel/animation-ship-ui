@@ -3,7 +3,7 @@ import { TextComponent } from 'src/types/TextVariant';
 
 export interface VariableComponentProps
   extends React.HTMLAttributes<HTMLHeadingElement> {
-  component: TextComponent
+  component: TextComponent;
   children?: React.ReactNode;
 }
 

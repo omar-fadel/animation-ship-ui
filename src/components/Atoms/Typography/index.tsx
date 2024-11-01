@@ -1,15 +1,18 @@
 import VariableTextComponent from '@atoms/VariableTextComponent';
 import clsx from 'clsx';
+import { HtmlHTMLAttributes } from 'react';
+import { Color } from 'src/types/Color';
+import { TextAlign } from 'src/types/TextAlign';
 import { TextComponent, TextVariant } from 'src/types/TextVariant';
 
-export interface TypographyProps
-  extends React.ReactHTMLElement<HTMLHeadingElement> {
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body1' | 'body2';
-  children: React.ReactNode;
-  color?: 'primary' | 'secondary' | 'black' | 'white';
-  align?: 'left' | 'center' | 'right';
-  bold?: 'true' | 'false';
+export interface TypographyProps {
+  variant: TextVariant;
+  color?: Color;
+  align?: TextAlign;
+  bold?: boolean;
   className?: string;
+  children: React.ReactNode;
+  props?: HtmlHTMLAttributes<HTMLHeadingElement>;
 }
 
 const componentMap: Record<TextVariant, TextComponent> = {
@@ -24,17 +27,17 @@ const componentMap: Record<TextVariant, TextComponent> = {
 };
 
 const Typography: React.FC<TypographyProps> = ({
-  children,
   variant,
   align,
   bold,
   className,
   color,
-  ...restOfProps
+  props = {},
+  children,
 }) => {
   return (
     <VariableTextComponent
-      {...restOfProps}
+      {...props}
       component={componentMap[variant]}
       className={clsx(className, {
         'text-h1': variant === 'h1',
@@ -50,7 +53,7 @@ const Typography: React.FC<TypographyProps> = ({
         'text-start': align === 'left',
         'text-center': align === 'center',
         'text-end': align === 'right',
-        'font-bold': bold === 'true',
+        'font-bold': bold,
         'text-white': color === 'white',
         'text-black': color === 'black',
       })}

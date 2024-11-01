@@ -1,34 +1,17 @@
-import Typography from '@atoms/Typography';
-import { TypographyProps } from '@atoms/Typography/TypographyProps';
+import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
-import styled from 'styled-components';
 
 export interface ButtonProps {
   color: 'primary' | 'secondary' | 'white' | 'black';
   className?: string;
   text: string;
-  textProps: Omit<TypographyProps, 'children'>;
+  textProps: TypographyProps;
   onClick: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined
   ) => void;
 }
 
 const buttonClassName = 'rounded px-6 py-4';
-const StyledButton = styled.button.attrs<Pick<ButtonProps, 'color'>>(
-  (props) => ({
-    className: clsx(
-      buttonClassName,
-      {
-        'bg-primary-main hover:bg-primary-dark': props.color === 'primary',
-        'bg-secondary-main hover:bg-secondary-dark':
-          props.color === 'secondary',
-        'bg-white hover:bg-grey-light': props.color === 'white',
-        'bg-black hover:bg-grey-main': props.color === 'black',
-      },
-      props.className
-    ),
-  })
-)``;
 
 const Button: React.FC<ButtonProps> = ({
   className,
@@ -40,11 +23,20 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => {
   return (
-    <StyledButton onClick={onClick} className={className} color={color}>
+    <button
+      onClick={onClick}
+      className={clsx(className, buttonClassName, {
+        'bg-primary-main hover:bg-primary-dark': color === 'primary',
+        'bg-secondary-main hover:bg-secondary-dark': color === 'secondary',
+        'bg-white hover:bg-grey-light': color === 'white',
+        'bg-black hover:bg-grey-main': color === 'black',
+      })}
+      color={color}
+    >
       <Typography color={color === 'white' ? 'black' : 'white'} {...textProps}>
         {text}
       </Typography>
-    </StyledButton>
+    </button>
   );
 };
 
