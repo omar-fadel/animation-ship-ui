@@ -1,22 +1,31 @@
+// import clsx from 'clsx';
+// import styled from 'styled-components';
+
 import clsx from 'clsx';
-import styled from 'styled-components';
+import React, { useMemo } from 'react';
 
 export interface BorderContainerProps {
   className?: string;
   color: 'primary' | 'secondary' | 'black' | 'white';
+  children: React.ReactNode;
 }
-
-const BorderContainer = styled.div.attrs<BorderContainerProps>((props) => ({
-  className: clsx(
-    `flex items-center justify-center rounded-lg border-2`,
-    {
-      'border-primary-main': props.color === 'primary',
-      'border-secondary-main': props.color === 'secondary',
-      'border-black': props.color === 'black',
-      'border-white': props.color === 'white',
-    },
-    props.className
-  ),
-}))``;
+const BorderContainer: React.FC<BorderContainerProps> = ({
+  color,
+  className: classNameProp,
+}) => {
+  const className = useMemo(() => {
+    return clsx(
+      `flex items-center justify-center rounded-lg border-2`,
+      {
+        'border-primary-main': color === 'primary',
+        'border-secondary-main': color === 'secondary',
+        'border-black': color === 'black',
+        'border-white': color === 'white',
+      },
+      classNameProp
+    );
+  }, [color, classNameProp]);
+  return <div className={className}></div>;
+};
 
 export default BorderContainer;
