@@ -1,9 +1,9 @@
 import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
+import { WithClassName } from 'src/types/WithClassName';
 
-export interface ButtonProps {
+export interface ButtonProps extends WithClassName {
   color: 'primary' | 'secondary' | 'white' | 'black';
-  className?: string;
   text: string;
   textProps: TypographyProps;
   onClick: (

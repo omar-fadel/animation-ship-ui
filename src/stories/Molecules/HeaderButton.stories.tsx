@@ -17,7 +17,7 @@ export default meta;
 
 export const Primary: StoryObj<typeof meta> = {
   args: {
-    isactive: 'false',
+    isActive: true,
     text: 'تيست',
     id: 'id',
   },

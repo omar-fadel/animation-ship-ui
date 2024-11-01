@@ -1,11 +1,11 @@
 import clsx from 'clsx';
+import { WithClassName } from 'src/types/WithClassName';
 
-export interface HeaderButtonProps {
+export interface HeaderButtonProps extends WithClassName {
   id?: string;
   isActive: boolean;
   text: string;
   onClick: (id?: string) => void;
-  className: string;
 }
 
 const HeaderButton: React.FC<HeaderButtonProps> = ({
