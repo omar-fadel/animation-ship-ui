@@ -7,7 +7,9 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  args: {},
+  args: {
+    color: 'primary',
+  },
 } satisfies Meta<typeof SocialMediaIcon>;
 
 export default meta;
@@ -16,7 +18,6 @@ export const Facebook: StoryObj<typeof meta> = {
   args: {
     icon: 'facebook',
     href: 'https://www.facebook.com',
-    color: 'secondary',
   },
 };
 
