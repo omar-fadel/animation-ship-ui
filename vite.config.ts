@@ -30,22 +30,10 @@ export default defineConfig({
     },
   },
   plugins: [
-    react({
-      plugins: [
-        [
-          '@swc/plugin-styled-components',
-          {
-            displayName: true,
-          },
-        ],
-      ],
-    }),
+    react(),
     dts({ tsconfigPath: './tsconfig.app.json' }),
     svgr({
       include: '**/*.svg?react',
     }),
   ],
-  // ssr: {
-  //   noExternal: ['react', 'react-dom'],
-  // },
 });
