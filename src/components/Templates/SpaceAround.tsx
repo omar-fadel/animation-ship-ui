@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { ContainerVariant } from 'src/types/ContainerVariant';
 import { WithClassName } from 'src/types/WithClassName';
 
-interface SpaceAroundProps extends WithClassName {
+export interface SpaceAroundProps extends WithClassName {
   children: React.ReactNode;
   component?: ContainerVariant;
 }

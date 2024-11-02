@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { ContainerVariant } from 'src/types/ContainerVariant';
 import { WithClassName } from 'src/types/WithClassName';
 
-interface AlignChildrenMidProps extends WithClassName {
+export interface AlignChildrenMidProps extends WithClassName {
   children: React.ReactNode;
   component?: ContainerVariant;
 }

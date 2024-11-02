@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { ContainerVariant } from 'src/types/ContainerVariant';
 import { WithClassName } from 'src/types/WithClassName';
 
-interface CenterChildrenProps extends WithClassName {
+export interface CenterChildrenProps extends WithClassName {
   children: React.ReactNode;
   component?: ContainerVariant;
   orientation?: 'column' | 'row';
