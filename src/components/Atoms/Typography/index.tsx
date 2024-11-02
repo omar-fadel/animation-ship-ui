@@ -56,6 +56,7 @@ const Typography: React.FC<TypographyProps> = ({
         'font-bold': bold,
         'text-white': color === 'white',
         'text-black': color === 'black',
+        'text-grey-main': color === 'grey',
       })}
     >
       {children}

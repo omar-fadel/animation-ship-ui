@@ -1,58 +1,53 @@
+import VariableContainerComponent from '@atoms/VariableContainerComponent';
 import clsx from 'clsx';
 import React from 'react';
-import styled from 'styled-components';
+import Color from 'src/types/Color';
+import { ContainerVariant } from 'src/types/ContainerVariant';
+import { WithClassName } from 'src/types/WithClassName';
 
-export interface ContainerProps {
+export interface ContainerProps extends WithClassName {
   backgroundImage?: string;
-  backgroundcolor?: 'primary' | 'secondary' | 'white' | 'black' | 'grey';
-  className?: string;
-  childrenClassName?: string;
+  backgroundColor?: Color;
+  component?: ContainerVariant;
+  childrenContainerClassName?: string;
+  childrenContainerElement?: ContainerVariant;
   children: React.ReactNode;
 }
-
-const BigContainer = styled.div
-  .attrs<Pick<ContainerProps, 'backgroundcolor'>>((props) => ({
-    className: clsx(
-      'flex w-screen justify-center',
-      {
-        'bg-primary-main': props.backgroundcolor === 'primary',
-        'bg-secondary-main': props.backgroundcolor === 'secondary',
-        'bg-white': props.backgroundcolor === 'white',
-        'bg-black': props.backgroundcolor === 'black',
-        'bg-grey-light': props.backgroundcolor === 'grey',
-      },
-      props.className
-    ),
-  }))
-  .withConfig({
-    shouldForwardProp: (prop) => !['backgroundcolor'].includes(prop),
-  })``;
-
-const ChildrenContainer = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['backgroundImage'].includes(prop),
-})<Omit<ContainerProps, 'backgroundcolor'>>`
-  max-width: 90rem;
-  width: 100%;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-  background-position: center;
-`;
 
 export const Container: React.FC<ContainerProps> = ({
   children,
   className,
   backgroundImage,
-  backgroundcolor,
-  childrenClassName,
+  backgroundColor,
+  childrenContainerClassName,
+  childrenContainerElement = 'div',
+  component = 'div',
 }) => {
   return (
-    <BigContainer backgroundcolor={backgroundcolor} className={className}>
-      <ChildrenContainer
-        childrenClassName={childrenClassName}
-        backgroundImage={backgroundImage}
+    <VariableContainerComponent
+      component={component}
+      className={clsx(
+        'flex w-screen justify-center',
+        {
+          'bg-primary-main': backgroundColor === 'primary',
+          'bg-secondary-main': backgroundColor === 'secondary',
+          'bg-white': backgroundColor === 'white',
+          'bg-black': backgroundColor === 'black',
+          'bg-grey-light': backgroundColor === 'grey',
+        },
+        className
+      )}
+    >
+      <VariableContainerComponent
+        component={childrenContainerElement}
+        className={clsx(
+          'w-full max-w-[90rem] bg-cover bg-center',
+          `bg-[url(${backgroundImage})]`,
+          childrenContainerClassName
+        )}
       >
         {children}
-      </ChildrenContainer>
-    </BigContainer>
+      </VariableContainerComponent>
+    </VariableContainerComponent>
   );
 };

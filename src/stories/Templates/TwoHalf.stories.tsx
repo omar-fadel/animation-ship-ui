@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import TwoHalf from '@templates/TwoHalfs';
+import TwoHalf from '@templates/TwoHalf';
 
 const meta = {
   title: 'Templates/TwoHalf',

@@ -1,3 +1,3 @@
-type Color = 'primary' | 'secondary' | 'black' | 'white';
+type Color = 'primary' | 'secondary' | 'black' | 'white' | 'grey';
 
 export default Color;

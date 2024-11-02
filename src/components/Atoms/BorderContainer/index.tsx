@@ -22,6 +22,7 @@ const BorderContainer: React.FC<BorderContainerProps> = ({
         'border-secondary-main': color === 'secondary',
         'border-black': color === 'black',
         'border-white': color === 'white',
+        'border-grey-main': color === 'grey',
       },
       classNameProp
     );

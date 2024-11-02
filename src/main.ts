@@ -14,7 +14,7 @@ import SpaceAround from '@templates/SpaceAround';
 import SpaceBetween from '@templates/SpaceBetween';
 import Stack from '@templates/Stack';
 import ThreeColumnFullSizeMid from '@templates/ThreeColumnFullSizeMid';
-import TwoHalf from '@templates/TwoHalfs';
+import TwoHalf from '@templates/TwoHalf';
 import Header from '@organisms/Header';
 import HeaderList from '@organisms/HeaderList';
 import primeX from './themes/primeX';
