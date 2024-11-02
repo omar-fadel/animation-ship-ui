@@ -1,12 +1,9 @@
 import React from 'react';
-import FacebookIcon from '@icons/facebook.svg?react';
-import InstagramIcon from '@icons/instagram.svg?react';
-import XIcon from '@icons/x.svg?react';
-import LinkedinIcon from '@icons/linkedIn.svg?react';
-import SnapchatIcon from '@icons/snapchat.svg?react';
 import clsx from 'clsx';
 import Color from 'src/types/Color';
+import Icons, { IconName } from '@atoms/Icons';
 
+type SocialMediaIcon = 'facebook' | 'instagram' | 'x' | 'linkedin' | 'snapchat';
 export interface SocialMediaIconProps {
   icon: 'facebook' | 'instagram' | 'x' | 'linkedin' | 'snapchat';
   color?: Color;
@@ -15,12 +12,12 @@ export interface SocialMediaIconProps {
   anchorClassName?: string;
 }
 
-const iconMap = {
-  facebook: FacebookIcon,
-  instagram: InstagramIcon,
-  x: XIcon,
-  linkedin: LinkedinIcon,
-  snapchat: SnapchatIcon,
+const iconMap: Record<SocialMediaIcon, IconName> = {
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  x: 'X',
+  linkedin: 'Linkedin',
+  snapchat: 'SnapChat',
 };
 
 const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
@@ -30,7 +27,6 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
   anchorClassName,
   iconClassName,
 }) => {
-  const IconComponent = iconMap[icon];
   const className = clsx(
     'transition-all duration-300 ease-in-out hover:scale-110',
     {
@@ -48,7 +44,8 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
       target="_blank"
       rel="noopener noreferrer"
     >
-      <IconComponent
+      <Icons
+        name={iconMap[icon]}
         className={clsx(className, iconClassName)}
         style={{
           width: '1.5rem',

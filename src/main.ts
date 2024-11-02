@@ -1,6 +1,7 @@
 'use client';
 import BorderContainer from '@atoms/BorderContainer';
 import SocialMediaIcon from '@atoms/SocialMediaIcon';
+import Icons from '@atoms/Icons';
 import Typography from '@atoms/Typography';
 import Button from '@molecules/Button/Button';
 import HeaderButton from '@molecules/HeaderButton';
@@ -43,4 +44,5 @@ export {
   Theme,
   Header,
   HeaderList,
+  Icons,
 };
