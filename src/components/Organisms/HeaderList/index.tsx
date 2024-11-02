@@ -24,7 +24,7 @@ const HeaderList: React.FC<HeaderListProps> = ({
     <SpaceBetween className={containerClassName}>
       {items.map((item) => (
         <HeaderButton
-          isactive={activeItem === item.id ? 'true' : 'false'}
+          isActive={activeItem === item.id}
           key={item.id}
           id={item.id}
           onClick={() => {

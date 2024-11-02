@@ -1,25 +1,19 @@
-import styled from 'styled-components';
 import EmailIcon from '@icons/emailIcon.svg?react';
 import PhoneIcon from '@icons/phoneIcon.svg?react';
 import LocationIcon from '@icons/mapIcon.svg?react';
-import Typography from '@atoms/Typography';
+import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
 import './contactText.css';
+import { WithClassName } from 'src/types/WithClassName';
+import Color from 'src/types/Color';
+import { ContactType } from 'src/types/ContactTypes';
 
-const ContactTextContainer = styled.a`
-  display: flex;
-  gap: 0.6875rem;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-export interface ContactTextProps {
+export interface ContactTextProps extends WithClassName {
   text: string;
-  type: 'email' | 'phone' | 'location';
-  color: 'primary' | 'secondary' | 'black' | 'white';
+  type: ContactType;
+  color: Color;
+  iconClassName?: string;
+  textProps: Omit<TypographyProps, 'children'>;
 }
 
 const iconMap = {
@@ -28,32 +22,49 @@ const iconMap = {
   location: LocationIcon,
 };
 
-const ContactText: React.FC<ContactTextProps> = ({ text, type, color }) => {
+const ContactText: React.FC<ContactTextProps> = ({
+  text,
+  type,
+  color,
+  className,
+  iconClassName,
+  textProps = {
+    variant: 'body2',
+    bold: true,
+  },
+}) => {
   const Icon = iconMap[type];
-  const className = clsx({
-    contactTextWhite: color === 'white',
-    contactTextBlack: color === 'black',
-    contactTextPrimary: color === 'primary',
-    contactTextSecondary: color === 'secondary',
-  });
-  const iconClassName = clsx({
-    'fill-primary-main': color === 'primary',
-    'fill-secondary-main': color === 'secondary',
-    'fill-black': color === 'black',
-    'fill-white': color === 'white',
-  });
 
   return (
-    <ContactTextContainer className={`contactText ${className}`}>
+    <div
+      className={clsx(
+        'flex cursor-pointer items-center gap-[0.6875rem] transition-all duration-300 ease-in-out hover:scale-110',
+        {
+          contactTextWhite: color === 'white',
+          contactTextBlack: color === 'black',
+          contactTextPrimary: color === 'primary',
+          contactTextSecondary: color === 'secondary',
+        },
+        className
+      )}
+    >
       <Icon
         id="icon"
-        className={iconClassName}
-        style={{ width: '1rem', height: '1rem' }}
+        className={clsx(
+          'w-[1rem h-[1rem]',
+          {
+            'fill-primary-main': color === 'primary',
+            'fill-secondary-main': color === 'secondary',
+            'fill-black': color === 'black',
+            'fill-white': color === 'white',
+          },
+          iconClassName
+        )}
       />
-      <Typography color={color} variant="body2" bold="true">
+      <Typography color={color} {...textProps}>
         {text}
       </Typography>
-    </ContactTextContainer>
+    </div>
   );
 };
 

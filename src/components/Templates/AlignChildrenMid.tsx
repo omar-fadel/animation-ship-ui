@@ -1,15 +1,28 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-export interface AlignChildrenMidProps {
-  className?: string;
-  gap: string;
+import VariableContainerComponent from '@atoms/VariableContainerComponent';
+import clsx from 'clsx';
+import { ContainerVariant } from 'src/types/ContainerVariant';
+import { WithClassName } from 'src/types/WithClassName';
+
+interface AlignChildrenMidProps extends WithClassName {
+  children: React.ReactNode;
+  component?: ContainerVariant;
 }
 
-const AlignChildrenMid = styled.div<AlignChildrenMidProps>`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: ${(props) => props.gap ?? '3.125rem'};
-`;
+const AlignChildrenMid: React.FC<AlignChildrenMidProps> = ({
+  className,
+  children,
+  component = 'div',
+}) => {
+  return (
+    <VariableContainerComponent
+      component={component}
+      className={clsx('flex flex-row justify-center gap-[3.125rem]', className)}
+    >
+      {children}
+    </VariableContainerComponent>
+  );
+};
 
 export default AlignChildrenMid;
