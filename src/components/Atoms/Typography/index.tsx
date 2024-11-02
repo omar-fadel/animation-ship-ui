@@ -1,10 +1,10 @@
 import VariableTextComponent from '@atoms/VariableTextComponent';
 import clsx from 'clsx';
 import { HtmlHTMLAttributes } from 'react';
-import Color from 'src/types/Color';
-import { TextAlign } from 'src/types/TextAlign';
-import { TextComponent, TextVariant } from 'src/types/TextVariant';
-import { WithClassName } from 'src/types/WithClassName';
+import Color from '@customTypes/Color';
+import { TextAlign } from '@customTypes/TextAlign';
+import { TextComponent, TextVariant } from '@customTypes/TextVariant';
+import { WithClassName } from '@customTypes/WithClassName';
 
 export interface TypographyProps extends WithClassName {
   variant: TextVariant;

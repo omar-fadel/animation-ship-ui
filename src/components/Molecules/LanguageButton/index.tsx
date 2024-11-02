@@ -2,7 +2,7 @@ import React from 'react';
 import CenteredChildren from '@templates/CenterChildren';
 import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
-import { WithClassName } from 'src/types/WithClassName';
+import { WithClassName } from '@customTypes/WithClassName';
 
 export interface LanguageButtonProps extends WithClassName {
   language: 'ar' | 'en';

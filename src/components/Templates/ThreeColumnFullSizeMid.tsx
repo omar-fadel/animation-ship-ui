@@ -1,6 +1,6 @@
 import VariableContainerComponent from '@atoms/VariableContainerComponent';
 import clsx from 'clsx';
-import { ContainerVariant } from 'src/types/ContainerVariant';
+import { ContainerVariant } from '@customTypes/ContainerVariant';
 
 export interface ThreeColumnFullSizeMidProps {
   startComponent: React.ReactNode;

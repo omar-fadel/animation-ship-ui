@@ -1,4 +1,4 @@
-import { ContainerVariant } from 'src/types/ContainerVariant';
+import { ContainerVariant } from '@customTypes/ContainerVariant';
 
 export interface VariableContainerProps
   extends React.HTMLAttributes<HTMLDivElement> {

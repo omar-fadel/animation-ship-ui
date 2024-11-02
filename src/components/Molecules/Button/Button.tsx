@@ -1,7 +1,7 @@
 import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
-import Color from 'src/types/Color';
-import { WithClassName } from 'src/types/WithClassName';
+import Color from '@customTypes/Color';
+import { WithClassName } from '@customTypes/WithClassName';
 
 export interface ButtonProps extends WithClassName {
   color: Color;

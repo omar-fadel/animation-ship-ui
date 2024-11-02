@@ -1,8 +1,8 @@
 import VariableContainerComponent from '@atoms/VariableContainerComponent';
 import clsx from 'clsx';
 import { ReactNode } from 'react';
-import { ContainerVariant } from 'src/types/ContainerVariant';
-import { WithClassName } from 'src/types/WithClassName';
+import { ContainerVariant } from '@customTypes/ContainerVariant';
+import { WithClassName } from '@customTypes/WithClassName';
 
 export interface TwoHalfProps extends WithClassName {
   startComponent: ReactNode;

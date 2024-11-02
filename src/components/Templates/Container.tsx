@@ -1,9 +1,9 @@
 import VariableContainerComponent from '@atoms/VariableContainerComponent';
 import clsx from 'clsx';
 import React from 'react';
-import Color from 'src/types/Color';
-import { ContainerVariant } from 'src/types/ContainerVariant';
-import { WithClassName } from 'src/types/WithClassName';
+import Color from '@customTypes/Color';
+import { ContainerVariant } from '@customTypes/ContainerVariant';
+import { WithClassName } from '@customTypes/WithClassName';
 
 export interface ContainerProps extends WithClassName {
   backgroundImage?: string;

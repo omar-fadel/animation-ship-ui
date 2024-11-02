@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { WithClassName } from 'src/types/WithClassName';
+import { WithClassName } from '@customTypes/WithClassName';
 
 export interface HeaderButtonProps extends WithClassName {
   id?: string;

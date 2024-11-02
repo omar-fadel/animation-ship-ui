@@ -4,9 +4,9 @@ import LocationIcon from '@icons/mapIcon.svg?react';
 import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
 import './contactText.css';
-import { WithClassName } from 'src/types/WithClassName';
-import Color from 'src/types/Color';
-import { ContactType } from 'src/types/ContactTypes';
+import { WithClassName } from '@customTypes/WithClassName';
+import Color from '@customTypes/Color';
+import { ContactType } from '@customTypes/ContactTypes';
 
 export interface ContactTextProps extends WithClassName {
   text: string;

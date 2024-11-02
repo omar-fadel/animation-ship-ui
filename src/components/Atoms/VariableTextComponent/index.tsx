@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextComponent } from 'src/types/TextVariant';
+import { TextComponent } from '@customTypes/TextVariant';
 
 export interface VariableComponentProps
   extends React.HTMLAttributes<HTMLHeadingElement> {
