@@ -11,7 +11,6 @@ export default meta;
 
 export const Primary: StoryObj<typeof meta> = {
   args: {
-    gap: '20px',
     className: 'bg-red-400',
     children: [
       <div className="h-32 w-32 bg-black" />,

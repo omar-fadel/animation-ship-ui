@@ -24,7 +24,7 @@ const IconBox: React.FC<IconBoxProps> = ({
   containerClassName,
 }) => {
   return (
-    <Stack className={containerClassName} justify="center">
+    <Stack className={clsx('justify-center', containerClassName)}>
       <BorderContainer
         color={color}
         className={clsx('w-[3.875rem h-[4.1875rem]', borderContainerClassName)}

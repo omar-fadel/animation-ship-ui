@@ -6,7 +6,6 @@ import tseslint from 'typescript-eslint';
 import prettier from 'eslint-plugin-prettier';
 import storybook from 'eslint-plugin-storybook';
 
-console.log(storybook.configs.recommended);
 export default tseslint.config(
   { ignores: ['dist', '.storybook'] },
   {

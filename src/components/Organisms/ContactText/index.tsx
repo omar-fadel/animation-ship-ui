@@ -13,7 +13,7 @@ export interface ContactTextProps extends WithClassName {
   type: ContactType;
   color: Color;
   iconClassName?: string;
-  textProps: Omit<TypographyProps, 'children'>;
+  textProps?: Omit<TypographyProps, 'children'>;
 }
 
 const iconMap = {
