@@ -2,7 +2,6 @@ import BorderContainer from '@atoms/BorderContainer';
 import Typography, { TypographyProps } from '@atoms/Typography';
 import Stack from '@templates/Stack';
 import clsx from 'clsx';
-import styled from 'styled-components';
 
 export interface IconBoxProps {
   color: 'primary' | 'secondary' | 'white' | 'black';

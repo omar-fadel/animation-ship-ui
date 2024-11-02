@@ -1,38 +1,38 @@
 import React from 'react';
-import styled from 'styled-components';
 import CenteredChildren from '@templates/CenterChildren';
-import Typography from '@atoms/Typography';
-import { TypographyProps } from '@atoms/Typography/TypographyProps';
+import Typography, { TypographyProps } from '@atoms/Typography';
+import clsx from 'clsx';
+import { WithClassName } from 'src/types/WithClassName';
 
-export interface LanguageButtonProps {
+export interface LanguageButtonProps extends WithClassName {
   language: 'ar' | 'en';
   onClick: () => void;
   buttonClassName?: string;
   textProps?: TypographyProps;
 }
-const LanguageButtonContainer = styled(CenteredChildren)`
-  width: 2.375rem;
-  height: 2.375rem;
-`;
 
 const LanguageButton: React.FC<LanguageButtonProps> = ({
   language,
   onClick,
   buttonClassName,
+  className,
   textProps = {
     variant: 'h6',
     color: 'primary',
   },
 }) => {
   return (
-    <LanguageButtonContainer className={buttonClassName}>
+    <CenteredChildren className={clsx(`h-[2.375rem] w-[2.375rem]`, className)}>
       <button
-        className="transition-all duration-100 ease-in-out hover:scale-110"
+        className={clsx(
+          'transition-all duration-100 ease-in-out hover:scale-110',
+          buttonClassName
+        )}
         onClick={onClick}
       >
         <Typography {...textProps}>{language.toUpperCase()}</Typography>
       </button>
-    </LanguageButtonContainer>
+    </CenteredChildren>
   );
 };
 
