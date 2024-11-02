@@ -13,6 +13,7 @@ export interface BorderContainerProps {
 const BorderContainer: React.FC<BorderContainerProps> = ({
   color,
   className: classNameProp,
+  children,
 }) => {
   const className = useMemo(() => {
     return clsx(
@@ -27,7 +28,7 @@ const BorderContainer: React.FC<BorderContainerProps> = ({
       classNameProp
     );
   }, [color, classNameProp]);
-  return <div className={className}></div>;
+  return <div className={className}>{children}</div>;
 };
 
 export default BorderContainer;
