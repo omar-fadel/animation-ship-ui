@@ -27,6 +27,7 @@ export default defineConfig({
       '@molecules': path.resolve(__dirname, 'src/components/Molecules'),
       '@organisms': path.resolve(__dirname, 'src/components/Organisms'),
       '@icons': path.resolve(__dirname, 'src/Icons'),
+      '@customTypes': path.resolve(__dirname, 'src/types'),
     },
   },
   plugins: [
