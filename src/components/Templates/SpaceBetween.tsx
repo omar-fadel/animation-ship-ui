@@ -1,10 +1,26 @@
-import styled from 'styled-components';
+import VariableContainerComponent from '@atoms/VariableContainerComponent';
+import clsx from 'clsx';
+import { ContainerVariant } from 'src/types/ContainerVariant';
+import { WithClassName } from 'src/types/WithClassName';
 
-const SpaceBetween = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-`;
+interface SpaceBetweenProps extends WithClassName {
+  children: React.ReactNode;
+  component?: ContainerVariant;
+}
+
+const SpaceBetween: React.FC<SpaceBetweenProps> = ({
+  children,
+  component = 'div',
+  className,
+}) => {
+  return (
+    <VariableContainerComponent
+      component={component}
+      className={clsx('flex justify-between gap-[1rem]', className)}
+    >
+      {children}
+    </VariableContainerComponent>
+  );
+};
 
 export default SpaceBetween;
