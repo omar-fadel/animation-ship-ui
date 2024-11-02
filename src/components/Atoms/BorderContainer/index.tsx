@@ -1,12 +1,9 @@
-// import clsx from 'clsx';
-// import styled from 'styled-components';
-
 import clsx from 'clsx';
 import React, { useMemo } from 'react';
 import Color from 'src/types/Color';
+import { WithClassName } from 'src/types/WithClassName';
 
-export interface BorderContainerProps {
-  className?: string;
+export interface BorderContainerProps extends WithClassName {
   color: Color;
   children: React.ReactNode;
 }

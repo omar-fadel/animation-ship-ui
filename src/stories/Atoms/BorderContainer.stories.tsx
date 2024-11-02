@@ -19,3 +19,11 @@ export const Primary: StoryObj<typeof meta> = {
     children: <div className="h-[16px] w-[16px] bg-green-400" />,
   },
 };
+
+export const Default: StoryObj<typeof meta> = {
+  args: {
+    color: 'black',
+    className: 'w-20 h-20',
+    children: <div className="h-[16px] w-[16px] bg-green-400" />,
+  },
+};
