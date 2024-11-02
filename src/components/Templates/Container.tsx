@@ -17,7 +17,7 @@ export interface ContainerProps extends WithClassName {
 export const Container: React.FC<ContainerProps> = ({
   children,
   className,
-  backgroundImage,
+  // backgroundImage,
   backgroundColor,
   childrenContainerClassName,
   childrenContainerElement = 'div',
@@ -42,7 +42,6 @@ export const Container: React.FC<ContainerProps> = ({
         component={childrenContainerElement}
         className={clsx(
           'w-full max-w-[90rem] bg-cover bg-center',
-          `bg-[url(${backgroundImage})]`,
           childrenContainerClassName
         )}
       >
