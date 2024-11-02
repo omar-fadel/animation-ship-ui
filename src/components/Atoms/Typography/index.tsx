@@ -1,16 +1,16 @@
 import VariableTextComponent from '@atoms/VariableTextComponent';
 import clsx from 'clsx';
 import { HtmlHTMLAttributes } from 'react';
-import { Color } from 'src/types/Color';
+import Color from 'src/types/Color';
 import { TextAlign } from 'src/types/TextAlign';
 import { TextComponent, TextVariant } from 'src/types/TextVariant';
+import { WithClassName } from 'src/types/WithClassName';
 
-export interface TypographyProps {
+export interface TypographyProps extends WithClassName {
   variant: TextVariant;
   color?: Color;
   align?: TextAlign;
   bold?: boolean;
-  className?: string;
   children: React.ReactNode;
   props?: HtmlHTMLAttributes<HTMLHeadingElement>;
 }

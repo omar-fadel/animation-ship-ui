@@ -3,10 +3,11 @@
 
 import clsx from 'clsx';
 import React, { useMemo } from 'react';
+import Color from 'src/types/Color';
 
 export interface BorderContainerProps {
   className?: string;
-  color: 'primary' | 'secondary' | 'black' | 'white';
+  color: Color;
   children: React.ReactNode;
 }
 const BorderContainer: React.FC<BorderContainerProps> = ({

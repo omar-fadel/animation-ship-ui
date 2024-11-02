@@ -5,11 +5,14 @@ import XIcon from '@icons/x.svg?react';
 import LinkedinIcon from '@icons/linkedIn.svg?react';
 import SnapchatIcon from '@icons/snapchat.svg?react';
 import clsx from 'clsx';
+import Color from 'src/types/Color';
 
 export interface SocialMediaIconProps {
   icon: 'facebook' | 'instagram' | 'x' | 'linkedin' | 'snapchat';
-  color?: 'primary' | 'secondary' | 'black' | 'white';
+  color?: Color;
   href: string;
+  iconClassName?: string;
+  anchorClassName?: string;
 }
 
 const iconMap = {
@@ -24,6 +27,8 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
   icon,
   href,
   color = 'white',
+  anchorClassName,
+  iconClassName,
 }) => {
   const IconComponent = iconMap[icon];
   const className = clsx(
@@ -39,12 +44,12 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
     <a
       style={{ width: '1.5rem', height: '1.5rem', display: 'block' }}
       href={href}
-      className="w-fit"
+      className={clsx('w-fit', anchorClassName)}
       target="_blank"
       rel="noopener noreferrer"
     >
       <IconComponent
-        className={className}
+        className={clsx(className, iconClassName)}
         style={{
           width: '1.5rem',
           height: '1.5rem',

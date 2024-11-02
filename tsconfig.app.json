@@ -31,7 +31,7 @@
       "@templates/*": ["src/components/Templates/*"],
       "@molecules/*": ["src/components/Molecules/*"],
       "@organisms/*": ["src/components/Organisms/*"],
-      "@icons/*": ["src/Icons/*"]
+      "@icons/*": ["src/Icons/*"],
     }
   },
   "include": ["src"]

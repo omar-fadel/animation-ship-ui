@@ -1,1 +1,3 @@
-export type Color = 'primary' | 'secondary' | 'black' | 'white';
+type Color = 'primary' | 'secondary' | 'black' | 'white';
+
+export default Color;

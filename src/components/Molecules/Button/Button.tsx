@@ -1,9 +1,10 @@
 import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
+import Color from 'src/types/Color';
 import { WithClassName } from 'src/types/WithClassName';
 
 export interface ButtonProps extends WithClassName {
-  color: 'primary' | 'secondary' | 'white' | 'black';
+  color: Color;
   text: string;
   textProps: TypographyProps;
   onClick: (

@@ -1,27 +1,19 @@
 import BorderContainer from '@atoms/BorderContainer';
-import Typography from '@atoms/Typography';
-import { TypographyProps } from '@atoms/Typography/TypographyProps';
+import Typography, { TypographyProps } from '@atoms/Typography';
 import Stack from '@templates/Stack';
+import clsx from 'clsx';
 import styled from 'styled-components';
 
 export interface IconBoxProps {
-  width?: string;
-  height?: string;
   color: 'primary' | 'secondary' | 'white' | 'black';
   text: string;
   icon: React.ReactNode;
   textProps?: Omit<TypographyProps, 'children'>;
+  containerClassName?: string;
+  borderContainerClassName?: string;
 }
-const StyledBorderContainer = styled(BorderContainer)<
-  Omit<IconBoxProps, 'icon' | 'text'>
->`
-  width: ${(props) => props.width || '3.875rem'};
-  height: ${(props) => props.height || '4.1875rem'};
-`;
 
 const IconBox: React.FC<IconBoxProps> = ({
-  height,
-  width,
   color,
   icon,
   text,
@@ -29,12 +21,17 @@ const IconBox: React.FC<IconBoxProps> = ({
     variant: 'body1',
     align: 'center',
   },
+  borderContainerClassName,
+  containerClassName,
 }) => {
   return (
-    <Stack justify="center">
-      <StyledBorderContainer color={color} width={width} height={height}>
+    <Stack className={containerClassName} justify="center">
+      <BorderContainer
+        color={color}
+        className={clsx('w-[3.875rem h-[4.1875rem]', borderContainerClassName)}
+      >
         {icon}
-      </StyledBorderContainer>
+      </BorderContainer>
       <Typography {...textProps} color={color}>
         {text}
       </Typography>
