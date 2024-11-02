@@ -31,32 +31,23 @@ const ThreeColumnFullSizeMid: React.FC<ThreeColumnFullSizeMidProps> = ({
   return (
     <VariableContainerComponent
       component={component}
-      className={clsx('grid grid-cols-10', className)}
+      className={clsx('flex items-center gap-[8rem]', className)}
     >
       <VariableContainerComponent
         component={startComponentElement}
-        className={clsx(
-          'col-span-3 flex items-center',
-          startComponentContainerClassName
-        )}
+        className={clsx(startComponentContainerClassName)}
       >
         {startComponent}
       </VariableContainerComponent>
       <VariableContainerComponent
         component={middleComponentElement}
-        className={clsx(
-          'col-span-6 flex justify-center gap-[1rem]',
-          middleComponentContainerClassName
-        )}
+        className={clsx('flex-1', middleComponentContainerClassName)}
       >
         {middleComponent}
       </VariableContainerComponent>
       <VariableContainerComponent
         component={endComponentElement}
-        className={clsx(
-          'col-span-1 flex items-center justify-end',
-          endComponentContainerClassName
-        )}
+        className={clsx(endComponentContainerClassName)}
       >
         {endComponent}
       </VariableContainerComponent>

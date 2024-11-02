@@ -1,6 +1,6 @@
+import Icons from '@atoms/Icons';
 import Header from '@organisms/Header';
 import { Meta, StoryObj } from '@storybook/react';
-import Logo from '@icons/logo.svg?react';
 import { fn } from '@storybook/test';
 
 const meta = {
@@ -16,7 +16,7 @@ export default meta;
 
 export const Default: StoryObj<typeof meta> = {
   args: {
-    logo: <Logo />,
+    logo: <Icons name="PrimeXLogo" />,
     headerList: {
       onChangeActiveItem: fn(),
       items: [
