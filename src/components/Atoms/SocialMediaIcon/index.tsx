@@ -2,8 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import Color from 'src/types/Color';
 import Icons, { IconName } from '@atoms/Icons';
+import SocialMedia from '@customTypes/SocialMedia';
 
-type SocialMediaIcon = 'facebook' | 'instagram' | 'x' | 'linkedin' | 'snapchat';
 export interface SocialMediaIconProps {
   icon: 'facebook' | 'instagram' | 'x' | 'linkedin' | 'snapchat';
   color?: Color;
@@ -12,7 +12,7 @@ export interface SocialMediaIconProps {
   anchorClassName?: string;
 }
 
-const iconMap: Record<SocialMediaIcon, IconName> = {
+const iconMap: Record<SocialMedia, IconName> = {
   facebook: 'Facebook',
   instagram: 'Instagram',
   x: 'X',

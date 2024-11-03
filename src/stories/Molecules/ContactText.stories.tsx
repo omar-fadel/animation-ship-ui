@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ContactText from '@organisms/ContactText';
+import ContactText from '@molecules/ContactText';
 
 const meta = {
-  title: 'Organisms/ContactText',
+  title: 'Molecules/ContactText',
   component: ContactText,
   parameters: {
     layout: 'centered',

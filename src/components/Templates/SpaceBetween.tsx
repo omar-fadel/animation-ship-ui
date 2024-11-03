@@ -6,17 +6,23 @@ import { WithClassName } from '@customTypes/WithClassName';
 export interface SpaceBetweenProps extends WithClassName {
   children: React.ReactNode;
   component?: ContainerVariant;
+  gap?: string;
 }
 
 const SpaceBetween: React.FC<SpaceBetweenProps> = ({
   children,
   component = 'div',
   className,
+  gap = '1rem',
 }) => {
   return (
     <VariableContainerComponent
       component={component}
-      className={clsx('flex justify-between gap-[1rem]', className)}
+      className={clsx(
+        'flex justify-between',
+        { [`gap-[${gap}]`]: gap },
+        className
+      )}
     >
       {children}
     </VariableContainerComponent>

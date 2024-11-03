@@ -51,7 +51,7 @@ const ContactText: React.FC<ContactTextProps> = ({
       <Icon
         id="icon"
         className={clsx(
-          'w-[1rem h-[1rem]',
+          'h-[1rem] w-[1rem]',
           {
             'fill-primary-main': color === 'primary',
             'fill-secondary-main': color === 'secondary',

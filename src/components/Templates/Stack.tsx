@@ -6,16 +6,18 @@ import { WithClassName } from '@customTypes/WithClassName';
 export interface StackProps extends WithClassName {
   component?: ContainerVariant;
   children: React.ReactNode;
+  gap?: string;
 }
 
 const Stack: React.FC<StackProps> = ({
   children,
   className,
   component = 'div',
+  gap = '1.25rem',
 }) => {
   return (
     <VariableContainerComponent
-      className={clsx('flex flex-col gap-[1.25rem]', className)}
+      className={clsx('flex flex-col', { [`gap-[${gap}]`]: gap }, className)}
       component={component}
     >
       {children}
