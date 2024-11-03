@@ -6,13 +6,11 @@ import { WithClassName } from '@customTypes/WithClassName';
 export interface ButtonProps extends WithClassName {
   color: Color;
   text: string;
-  textProps?: TypographyProps;
+  textProps?: Omit<TypographyProps, 'children'>;
   onClick: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined
   ) => void;
 }
-
-const buttonClassName = 'rounded px-6 py-4';
 
 const Button: React.FC<ButtonProps> = ({
   className,
@@ -20,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   text,
   textProps = {
     variant: 'h5',
+    color: 'black',
   },
   onClick,
 }) => {
@@ -38,9 +37,7 @@ const Button: React.FC<ButtonProps> = ({
       )}
       color={color}
     >
-      <Typography color={color === 'white' ? 'black' : 'white'} {...textProps}>
-        {text}
-      </Typography>
+      <Typography {...textProps}>{text}</Typography>
     </button>
   );
 };

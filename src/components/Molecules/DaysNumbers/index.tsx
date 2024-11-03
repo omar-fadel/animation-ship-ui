@@ -1,6 +1,7 @@
 import Typography from '@atoms/Typography';
 import Color from '@customTypes/Color';
 import CenterChildren from '@templates/CenterChildren';
+import englishToArabicNumerals from '@utils/englishToArabicNumerals';
 import clsx from 'clsx';
 import dayjs, { Dayjs } from 'dayjs';
 import { useMemo } from 'react';
@@ -23,10 +24,7 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
   buttonClassName,
 }) => {
   const firstDayInTheMonth = useMemo(() => {
-    const date = dayjs()
-      .month(month - 1)
-      .date(1)
-      .year(year);
+    const date = dayjs().month(month).date(1).year(year);
     return date.day();
   }, [month, year]);
 
@@ -37,7 +35,7 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
   const isToday = (day: number) => {
     return (
       day === dayjs().date() &&
-      month === dayjs().month() + 1 &&
+      month === dayjs().month() &&
       year === dayjs().year()
     );
   };
@@ -46,7 +44,7 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
     if (!selectedDate) return false;
     return (
       selectedDate.date() === day &&
-      selectedDate.month() + 1 === month &&
+      selectedDate.month() === month &&
       selectedDate.year() === year
     );
   };
@@ -110,7 +108,7 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
               )}
               variant="body1"
             >
-              {index + 1}
+              {englishToArabicNumerals(index + 1)}
             </Typography>
           </button>
         </CenterChildren>

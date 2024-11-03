@@ -28,6 +28,7 @@ export default defineConfig({
       '@organisms': path.resolve(__dirname, 'src/components/Organisms'),
       '@icons': path.resolve(__dirname, 'src/Icons'),
       '@customTypes': path.resolve(__dirname, 'src/types'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
   plugins: [

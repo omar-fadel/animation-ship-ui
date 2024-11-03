@@ -32,7 +32,8 @@
       "@molecules/*": ["src/components/Molecules/*"],
       "@organisms/*": ["src/components/Organisms/*"],
       "@icons/*": ["src/Icons/*"],
-      "@customTypes/*": ["src/types/*"]
+      "@customTypes/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": ["src"]

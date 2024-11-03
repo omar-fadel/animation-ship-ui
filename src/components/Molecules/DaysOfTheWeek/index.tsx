@@ -5,29 +5,29 @@ import dayjs from 'dayjs';
 import localeData from 'dayjs/plugin/localeData';
 import 'dayjs/locale/ar-sa';
 import 'dayjs/locale/en';
-import { useEffect } from 'react';
-import DateLocals from '@customTypes/DateLocales';
+import { WithClassName } from '@customTypes/WithClassName';
 
 dayjs.extend(localeData);
 
-export interface DaysOfTheWeekProps {
+export interface DaysOfTheWeekProps extends WithClassName {
   color?: Color;
   variant?: TextVariant;
-  locale: DateLocals;
 }
 
 const DaysOfTheWeek: React.FC<DaysOfTheWeekProps> = ({
   color = 'white',
   variant = 'body2',
-  locale,
+  className,
 }) => {
-  useEffect(() => {
-    dayjs.locale(locale);
-  }, [locale]);
   return (
     <>
       {dayjs.weekdays().map((day) => (
-        <Typography variant={variant} color={color}>
+        <Typography
+          align="center"
+          className={className}
+          variant={variant}
+          color={color}
+        >
           {day}
         </Typography>
       ))}

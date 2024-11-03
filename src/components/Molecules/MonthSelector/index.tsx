@@ -2,6 +2,7 @@ import Typography from '@atoms/Typography';
 import Color from '@customTypes/Color';
 import ClickableIcon from '@molecules/ClickableIcon';
 import SpaceBetween from '@templates/SpaceBetween';
+import clsx from 'clsx';
 
 export interface MonthSelectorProps {
   month: string;
@@ -23,7 +24,7 @@ const MonthSelector: React.FC<MonthSelectorProps> = ({
   iconHeight = '1.5rem',
 }) => {
   return (
-    <SpaceBetween className="max-w-[12rem] items-center">
+    <SpaceBetween className="max-w-[12rem] items-center gap-[2rem]">
       <ClickableIcon
         color={iconColor}
         iconName="Arrow"
@@ -31,7 +32,7 @@ const MonthSelector: React.FC<MonthSelectorProps> = ({
         iconProps={{
           width: iconWidth,
           height: iconHeight,
-          className: 'rotate-90',
+          className: 'rotate-90 rtl:-rotate-90',
         }}
       />
       <Typography color={textColor} variant="body1">
@@ -45,7 +46,7 @@ const MonthSelector: React.FC<MonthSelectorProps> = ({
         iconProps={{
           width: iconWidth,
           height: iconHeight,
-          className: '-rotate-90',
+          className: '-rotate-90 rtl:rotate-90',
         }}
       />
     </SpaceBetween>
