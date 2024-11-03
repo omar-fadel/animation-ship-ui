@@ -22,7 +22,9 @@ const HeaderList: React.FC<HeaderListProps> = ({
   onChangeActiveItem,
 }) => {
   return (
-    <SpaceBetween className={clsx('hidden sm:flex', containerClassName)}>
+    <SpaceBetween
+      className={clsx('hidden gap-[0.5rem] sm:flex', containerClassName)}
+    >
       {items.map((item) => (
         <HeaderButton
           isActive={activeItem === item.id}

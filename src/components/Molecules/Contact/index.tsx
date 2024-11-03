@@ -19,7 +19,7 @@ const Contact: React.FC<ContactProps> = ({
   mapHref,
 }) => {
   return (
-    <Stack gap="2rem">
+    <Stack className="gap-[1rem]">
       <ConditionalRender condition={!!number}>
         <a href={`tel:${number}`}>
           <ContactText type="phone" color={color} text={number!} />
