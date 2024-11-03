@@ -17,7 +17,7 @@ const Stack: React.FC<StackProps> = ({
 }) => {
   return (
     <VariableContainerComponent
-      className={clsx('flex flex-col', { [`gap-[${gap}]`]: gap }, className)}
+      className={clsx('flex flex-col', `gap-[${gap}]`, className)}
       component={component}
     >
       {children}

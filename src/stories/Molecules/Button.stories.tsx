@@ -1,4 +1,4 @@
-import Button from '@molecules/Button/Button';
+import Button from '@molecules/Button';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

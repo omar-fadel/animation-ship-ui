@@ -6,7 +6,7 @@ import { WithClassName } from '@customTypes/WithClassName';
 export interface ButtonProps extends WithClassName {
   color: Color;
   text: string;
-  textProps: TypographyProps;
+  textProps?: TypographyProps;
   onClick: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined
   ) => void;

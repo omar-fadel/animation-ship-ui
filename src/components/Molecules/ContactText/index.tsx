@@ -27,7 +27,7 @@ const ContactText: React.FC<ContactTextProps> = ({
   className,
   iconClassName,
   textProps = {
-    variant: 'body1',
+    variant: 'body2',
     bold: true,
   },
 }) => {
@@ -45,10 +45,11 @@ const ContactText: React.FC<ContactTextProps> = ({
       )}
     >
       <Icons
-        id="icon"
         iconName={iconMap[type]}
+        height="1rem"
+        width="1rem"
+        id="icon"
         className={clsx(
-          'h-[1rem] w-[1rem]',
           {
             'fill-primary-main': color === 'primary',
             'fill-secondary-main': color === 'secondary',
