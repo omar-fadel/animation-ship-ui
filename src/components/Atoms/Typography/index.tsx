@@ -35,9 +35,10 @@ const Typography: React.FC<TypographyProps> = ({
   props = {},
   children,
 }) => {
+  const { className: classNameInProps, ...restProps } = props;
   return (
     <VariableTextComponent
-      {...props}
+      {...restProps}
       component={componentMap[variant]}
       className={clsx(
         {
@@ -59,6 +60,7 @@ const Typography: React.FC<TypographyProps> = ({
           'text-black': color === 'black',
           'text-grey-main': color === 'grey',
         },
+        classNameInProps,
         className
       )}
     >

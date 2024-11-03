@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: primeX,
   plugins: [],
+  important: true,
 };
 
 export default config;

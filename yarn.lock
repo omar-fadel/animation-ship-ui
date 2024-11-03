@@ -1936,6 +1936,11 @@ csstype@^3.0.2:
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
 
+dayjs@^1.11.13:
+  version "1.11.13"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.13.tgz"
+  integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
+
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/de-indent/-/de-indent-1.0.2.tgz"
@@ -4434,11 +4439,6 @@ synckit@^0.9.1:
   dependencies:
     "@pkgr/core" "^0.1.0"
     tslib "^2.6.2"
-
-tailwindcss-rtl@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.npmjs.org/tailwindcss-rtl/-/tailwindcss-rtl-0.9.0.tgz"
-  integrity sha512-y7yC8QXjluDBEFMSX33tV6xMYrf0B3sa+tOB5JSQb6/G6laBU313a+Z+qxu55M1Qyn8tDMttjomsA8IsJD+k+w==
 
 tailwindcss@^3.4.14:
   version "3.4.14"

@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import './index.css';
+import localeData from 'dayjs/plugin/localeData';
 
 const preview: Preview = {
   parameters: {

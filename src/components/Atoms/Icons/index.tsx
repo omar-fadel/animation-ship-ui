@@ -15,6 +15,7 @@ import Hamburger from '@icons/hamburger.svg?react';
 import Close from '@icons/close.svg?react';
 import Color from '@customTypes/Color';
 import clsx from 'clsx';
+import Arrow from '@icons/arrow.svg?react';
 
 const IconsMap = {
   Cup,
@@ -32,6 +33,7 @@ const IconsMap = {
   X,
   Hamburger,
   Close,
+  Arrow,
 };
 export type IconName = keyof typeof IconsMap;
 interface Icon extends React.SVGProps<SVGSVGElement> {
