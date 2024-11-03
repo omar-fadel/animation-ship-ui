@@ -1,12 +1,10 @@
-import EmailIcon from '@icons/emailIcon.svg?react';
-import PhoneIcon from '@icons/phoneIcon.svg?react';
-import LocationIcon from '@icons/mapIcon.svg?react';
 import Typography, { TypographyProps } from '@atoms/Typography';
 import clsx from 'clsx';
 import './contactText.css';
 import { WithClassName } from '@customTypes/WithClassName';
 import Color from '@customTypes/Color';
 import { ContactType } from '@customTypes/ContactTypes';
+import Icons, { IconName } from '@atoms/Icons';
 
 export interface ContactTextProps extends WithClassName {
   text: string;
@@ -16,10 +14,10 @@ export interface ContactTextProps extends WithClassName {
   textProps?: Omit<TypographyProps, 'children'>;
 }
 
-const iconMap = {
-  email: EmailIcon,
-  phone: PhoneIcon,
-  location: LocationIcon,
+const iconMap: Record<ContactType, IconName> = {
+  email: 'Email',
+  phone: 'Phone',
+  location: 'Map',
 };
 
 const ContactText: React.FC<ContactTextProps> = ({
@@ -29,12 +27,10 @@ const ContactText: React.FC<ContactTextProps> = ({
   className,
   iconClassName,
   textProps = {
-    variant: 'body2',
+    variant: 'body1',
     bold: true,
   },
 }) => {
-  const Icon = iconMap[type];
-
   return (
     <div
       className={clsx(
@@ -48,8 +44,9 @@ const ContactText: React.FC<ContactTextProps> = ({
         className
       )}
     >
-      <Icon
+      <Icons
         id="icon"
+        iconName={iconMap[type]}
         className={clsx(
           'h-[1rem] w-[1rem]',
           {
