@@ -1,6 +1,7 @@
 import Overlay from '@atoms/Overlay';
 import { Meta, StoryObj } from '@storybook/react';
 import RtlDecorator from '../Decorators/RtlDecorator';
+import { fn } from '@storybook/test';
 
 const meta = {
   title: 'Atoms/Overlay',
@@ -8,6 +9,7 @@ const meta = {
   args: {
     open: true,
     children: <h1>Hello world</h1>,
+    onClose: fn(),
   },
 } satisfies Meta<typeof Overlay>;
 

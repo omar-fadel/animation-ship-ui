@@ -2,6 +2,8 @@ import VariableContainerComponent from '@atoms/VariableContainerComponent';
 import Color from '@customTypes/Color';
 import { ContainerVariant } from '@customTypes/ContainerVariant';
 import { WithClassName } from '@customTypes/WithClassName';
+import ClickableIcon from '@molecules/ClickableIcon';
+import EndChildren from '@templates/EndChildren';
 import clsx from 'clsx';
 
 export interface Overlay extends WithClassName {
@@ -9,7 +11,17 @@ export interface Overlay extends WithClassName {
   open: boolean;
   color: Color;
   component?: ContainerVariant;
+  onClose: () => void;
+  closeIconClassName?: string;
 }
+
+const CloseIconColorMap: Record<Color, Color> = {
+  primary: 'white',
+  secondary: 'white',
+  white: 'black',
+  black: 'white',
+  grey: 'black',
+};
 
 const Overlay: React.FC<Overlay> = ({
   children,
@@ -17,6 +29,8 @@ const Overlay: React.FC<Overlay> = ({
   color,
   component,
   className,
+  onClose,
+  closeIconClassName,
 }) => {
   return (
     <VariableContainerComponent
@@ -35,6 +49,14 @@ const Overlay: React.FC<Overlay> = ({
         className
       )}
     >
+      <EndChildren className="p-2">
+        <ClickableIcon
+          iconName="Close"
+          color={CloseIconColorMap[color]}
+          className={clsx(closeIconClassName)}
+          onClick={onClose}
+        />
+      </EndChildren>
       {children}
     </VariableContainerComponent>
   );
