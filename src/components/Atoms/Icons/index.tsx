@@ -50,8 +50,9 @@ const Icons: React.FC<Icon> = ({
   const Component = IconsMap[iconName];
   return (
     <Component
+      width={width}
+      height={height}
       className={clsx(
-        `w-[${width}] h-[${height}]`,
         {
           'fill-primary-main hover:fill-primary-light': iconColor === 'primary',
           'fill-secondary-main hover:fill-secondary-dark':

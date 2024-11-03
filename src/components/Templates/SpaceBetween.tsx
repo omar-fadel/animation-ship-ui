@@ -13,16 +13,11 @@ const SpaceBetween: React.FC<SpaceBetweenProps> = ({
   children,
   component = 'div',
   className,
-  gap = '1rem',
 }) => {
   return (
     <VariableContainerComponent
       component={component}
-      className={clsx(
-        'flex justify-between',
-        { [`gap-[${gap}]`]: gap },
-        className
-      )}
+      className={clsx('flex justify-between', className)}
     >
       {children}
     </VariableContainerComponent>

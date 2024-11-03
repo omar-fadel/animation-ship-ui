@@ -65,14 +65,18 @@ const Footer: React.FC<FooterProps> = ({
   return (
     <Container backgroundColor="black">
       <div
-        className={clsx('flex w-full flex-wrap gap-[6rem] p-[4rem]', {
-          'bg-white': backgroundColor === 'white',
-          'bg-black': backgroundColor === 'black',
-        })}
+        className={clsx(
+          'grid grid-cols-1 gap-[4rem] px-[2rem] py-[4rem] md:grid-cols-2 lg:grid-cols-4',
+          {
+            'bg-white': backgroundColor === 'white',
+            'bg-black': backgroundColor === 'black',
+          }
+        )}
       >
         <CenterChildren>{logo}</CenterChildren>
         <Section color={headerColor} title={followUs}>
           <SocialMediaContactInfo
+            className="max-w-[12rem]"
             availableSocialMedia={socialMedia}
             color={textColor}
           />

@@ -1,9 +1,11 @@
 import SocialMediaIcon from '@atoms/SocialMediaIcon';
 import AvailableSocialMedia from '@customTypes/AvailableSocialMedia';
 import Color from '@customTypes/Color';
+import { WithClassName } from '@customTypes/WithClassName';
 import SpaceBetween from '@templates/SpaceBetween';
+import clsx from 'clsx';
 
-export interface SocialMediaContactInfoProps {
+export interface SocialMediaContactInfoProps extends WithClassName {
   availableSocialMedia: AvailableSocialMedia;
   color: Color;
 }
@@ -11,9 +13,10 @@ export interface SocialMediaContactInfoProps {
 const SocialMediaContactInfo: React.FC<SocialMediaContactInfoProps> = ({
   color,
   availableSocialMedia,
+  className,
 }) => {
   return (
-    <SpaceBetween gap="1rem">
+    <SpaceBetween className={clsx('gap-[1.5rem]', className)}>
       {availableSocialMedia.map((socialMedia) => (
         <SocialMediaIcon
           key={socialMedia.href}
