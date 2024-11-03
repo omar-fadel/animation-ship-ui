@@ -4,7 +4,7 @@ import AvailableSocialMedia from '@customTypes/AvailableSocialMedia';
 import Color from '@customTypes/Color';
 import Contact from '@molecules/Contact';
 import SocialMediaContactInfo from '@molecules/SocialMediaContactInfo';
-import SpaceBetween from '@templates/SpaceBetween';
+
 import Stack from '@templates/Stack';
 import clsx from 'clsx';
 import CenterChildren from '@templates/CenterChildren';

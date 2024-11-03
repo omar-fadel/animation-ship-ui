@@ -13,11 +13,10 @@ const Stack: React.FC<StackProps> = ({
   children,
   className,
   component = 'div',
-  gap = '1.25rem',
 }) => {
   return (
     <VariableContainerComponent
-      className={clsx('flex flex-col', `gap-[${gap}]`, className)}
+      className={clsx('flex flex-col', className)}
       component={component}
     >
       {children}

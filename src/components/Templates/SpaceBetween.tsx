@@ -6,7 +6,6 @@ import { WithClassName } from '@customTypes/WithClassName';
 export interface SpaceBetweenProps extends WithClassName {
   children: React.ReactNode;
   component?: ContainerVariant;
-  gap?: string;
 }
 
 const SpaceBetween: React.FC<SpaceBetweenProps> = ({
