@@ -1,12 +1,12 @@
 import { Config } from 'tailwindcss';
 
 const primeX: Config['theme'] = {
-  screens: {
-    sm: '--var(--screen-sm, 640px)',
-    md: '--var(--screen-md, 768px)',
-    lg: '--var(--screen-lg, 1440px)',
-  },
   extend: {
+    screens: {
+      sm: '599px',
+      md: '904px',
+      lg: '1440px',
+    },
     colors: {
       primary: {
         light: 'var(--color-primary-light, #FFD7D9)',

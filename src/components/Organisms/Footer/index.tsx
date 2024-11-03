@@ -36,7 +36,7 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ children, title, color }) => (
-  <Stack gap={'2rem'} component="section">
+  <Stack className="gap-[0.5rem]" component="section">
     <Typography color={color} variant="h6">
       {title}
     </Typography>
