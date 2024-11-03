@@ -12,6 +12,9 @@ import PrimeXLogo from '@icons/prime-x-logo.svg?react';
 import SnapChat from '@icons/snapchat.svg?react';
 import X from '@icons/x.svg?react';
 import Hamburger from '@icons/hamburger.svg?react';
+import Close from '@icons/close.svg?react';
+import Color from '@customTypes/Color';
+import clsx from 'clsx';
 
 const IconsMap = {
   Cup,
@@ -28,15 +31,40 @@ const IconsMap = {
   SnapChat,
   X,
   Hamburger,
+  Close,
 };
 export type IconName = keyof typeof IconsMap;
 interface Icon extends React.SVGProps<SVGSVGElement> {
   iconName: IconName;
+  iconColor?: Color;
 }
 
-const Icons: React.FC<Icon> = ({ iconName, ...props }) => {
+const Icons: React.FC<Icon> = ({
+  iconName,
+  className,
+  iconColor,
+  width = '3rem',
+  height = '3rem',
+  ...props
+}) => {
   const Component = IconsMap[iconName];
-  return <Component {...props} />;
+  return (
+    <Component
+      className={clsx(
+        `w-[${width}] h-[${height}]`,
+        {
+          'fill-primary-main hover:fill-primary-light': iconColor === 'primary',
+          'fill-secondary-main hover:fill-secondary-dark':
+            iconColor === 'secondary',
+          'fill-black hover:fill-grey-main': iconColor === 'black',
+          'fill-white hover:fill-grey-light': iconColor === 'white',
+          'fill-grey-light hover:fill-grey-main': iconColor === 'grey',
+        },
+        className
+      )}
+      {...props}
+    />
+  );
 };
 
 export default Icons;

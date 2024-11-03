@@ -29,16 +29,11 @@ const ClickableIcon: React.FC<ClickableIconProps> = ({
     >
       <Icons
         iconName={iconName}
+        iconColor={color}
+        width="3rem"
+        height="3rem"
         className={clsx(
-          'w-[3rem h-[3rem] transition-all hover:scale-110 hover:cursor-pointer',
-          {
-            'fill-primary-main hover:fill-primary-light': color === 'primary',
-            'fill-secondary-main hover:fill-secondary-dark':
-              color === 'secondary',
-            'fill-black hover:fill-grey-main': color === 'black',
-            'fill-white hover:fill-grey-light': color === 'white',
-            'fill-grey-light hover:fill-grey-main': color === 'grey',
-          },
+          'transition-all hover:scale-110 hover:cursor-pointer',
           iconClassName
         )}
         {...restOfIconProps}
