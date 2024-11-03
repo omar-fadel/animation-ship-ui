@@ -45,7 +45,7 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
       rel="noopener noreferrer"
     >
       <Icons
-        name={iconMap[icon]}
+        iconName={iconMap[icon]}
         className={clsx(className, iconClassName)}
         style={{
           width: '1.5rem',

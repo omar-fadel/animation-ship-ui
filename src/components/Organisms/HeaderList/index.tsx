@@ -1,5 +1,6 @@
 import HeaderButton from '@molecules/HeaderButton';
 import SpaceBetween from '@templates/SpaceBetween';
+import clsx from 'clsx';
 
 export type HeaderItem = {
   text: string;
@@ -21,7 +22,7 @@ const HeaderList: React.FC<HeaderListProps> = ({
   onChangeActiveItem,
 }) => {
   return (
-    <SpaceBetween className={containerClassName}>
+    <SpaceBetween className={clsx('hidden sm:flex', containerClassName)}>
       {items.map((item) => (
         <HeaderButton
           isActive={activeItem === item.id}

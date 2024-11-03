@@ -16,7 +16,7 @@ export default meta;
 
 export const Default: StoryObj<typeof meta> = {
   args: {
-    logo: <Icons name="PrimeXLogo" />,
+    logo: <Icons iconName="PrimeXLogo" />,
     headerList: {
       onChangeActiveItem: fn(),
       items: [

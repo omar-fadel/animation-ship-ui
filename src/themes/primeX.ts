@@ -1,6 +1,11 @@
 import { Config } from 'tailwindcss';
 
 const primeX: Config['theme'] = {
+  screens: {
+    sm: '599px',
+    md: '904px',
+    lg: '1440px',
+  },
   extend: {
     colors: {
       primary: {

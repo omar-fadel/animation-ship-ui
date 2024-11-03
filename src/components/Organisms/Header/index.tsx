@@ -19,9 +19,8 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <nav>
-      <Container backgroundColor="white" className="px-4 py-6">
+      <Container component="nav" backgroundColor="white" className="px-4 py-6">
         <ThreeColumnFullSizeMid
-          className="w-full"
           startComponent={
             <button className="transition-all duration-200 ease-in hover:scale-105">
               {logo}
