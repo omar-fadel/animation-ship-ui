@@ -54,8 +54,8 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({
         color={hamburgerIconColor}
         iconName={hamburgerIconName}
         iconProps={{
-          width: '2rem',
-          height: '2rem',
+          width: '3rem',
+          height: '3rem',
           ...hamburgerIconProps,
         }}
       />

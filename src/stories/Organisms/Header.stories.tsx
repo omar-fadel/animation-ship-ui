@@ -35,6 +35,7 @@ export const Default: StoryObj<typeof meta> = {};
 
 export const Mobile: StoryObj<typeof meta> = {
   parameters: {
+    layout: 'initial',
     viewport: {
       viewports: INITIAL_VIEWPORTS,
       defaultViewport: 'iphone12',
