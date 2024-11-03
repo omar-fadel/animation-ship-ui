@@ -8,6 +8,9 @@ const meta = {
   component: Header,
   parameters: {
     layout: 'centered',
+    backgrounds: {
+      default: 'dark',
+    },
   },
   args: {},
 } satisfies Meta<typeof Header>;

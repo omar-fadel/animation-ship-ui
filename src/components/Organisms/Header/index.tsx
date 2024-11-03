@@ -1,5 +1,6 @@
 import LanguageButton from '@molecules/LanguageButton';
 import HeaderList, { HeaderListProps } from '@organisms/HeaderList';
+import HeaderMenu from '@organisms/HeaderMenu';
 import { Container } from '@templates/Container';
 import ThreeColumnFullSizeMid from '@templates/ThreeColumnFullSizeMid';
 import { ReactNode } from 'react';
@@ -26,7 +27,12 @@ const Header: React.FC<HeaderProps> = ({
               {logo}
             </button>
           }
-          middleComponent={<HeaderList {...headerList} />}
+          middleComponent={
+            <>
+              <HeaderList {...headerList} />
+              <HeaderMenu {...headerList} />
+            </>
+          }
           endComponent={
             <LanguageButton
               language={currentLanguage}
