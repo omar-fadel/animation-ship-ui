@@ -13,6 +13,7 @@ export interface TypographyProps extends WithClassName {
   bold?: boolean;
   children: React.ReactNode;
   props?: HtmlHTMLAttributes<HTMLHeadingElement>;
+  inverseColor?: boolean;
 }
 
 const componentMap: Record<TextVariant, TextComponent> = {
@@ -35,6 +36,7 @@ const Typography: React.FC<TypographyProps> = ({
   color,
   props = {},
   children,
+  inverseColor,
 }) => {
   const { className: classNameInProps, ...restProps } = props;
   return (
@@ -51,15 +53,28 @@ const Typography: React.FC<TypographyProps> = ({
           'text-h6': variant === 'h6',
           'text-body1': variant === 'body1',
           'text-body2': variant === 'body2',
-          'text-primary-main': color === 'primary',
-          'text-secondary-main': color === 'secondary',
+        },
+        {
+          'text-primary-main': color === 'primary' && !inverseColor,
+          'text-secondary-main': color === 'secondary' && !inverseColor,
+          'text-white': color === 'white' && !inverseColor,
+          'text-black': color === 'black' && !inverseColor,
+          'text-grey-main': color === 'grey' && !inverseColor,
+        },
+        {
+          'text-white':
+            (color === 'primary' ||
+              color === 'secondary' ||
+              color === 'black' ||
+              color === 'grey') &&
+            inverseColor,
+          'text-black': color === 'white' && inverseColor,
+        },
+        {
           'text-start': align === 'left',
           'text-center': align === 'center',
           'text-end': align === 'right',
           'font-bold': bold,
-          'text-white': color === 'white',
-          'text-black': color === 'black',
-          'text-grey-main': color === 'grey',
         },
         classNameInProps,
         className
