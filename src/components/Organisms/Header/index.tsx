@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
 }) => {
   return (
-    <nav className="py-[2rem]">
+    <nav className="p-[2rem]">
       <ThreeColumnFullSizeMid
         startComponent={
           <button className="transition-all duration-200 ease-in hover:scale-105">

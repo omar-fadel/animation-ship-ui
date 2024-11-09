@@ -7,12 +7,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 const meta = {
   title: 'Organisms/Header',
   component: Header,
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
+
   args: {
     logo: <Icons iconName="PrimeXLogo" width="178" height="29" />,
     headerList: {
