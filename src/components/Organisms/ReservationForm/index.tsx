@@ -6,8 +6,9 @@ import ReservationInfo, {
   ReservationInfoProps,
 } from '@organisms/ReservationInfo';
 import CenterChildren from '@templates/CenterChildren';
+import clsx from 'clsx';
 import dayjs, { Dayjs } from 'dayjs';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 export interface ReservationFormProps
   extends Pick<
@@ -46,6 +47,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
   const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
   const [selectedTime, setSelectedTime] = useState<string>('');
 
+  const formIsVisible = useMemo(() => !!selectedTime, [selectedTime]);
+
   const handleFormSubmit = useCallback(
     (reservationInfo: ReservationData) => {
       onSubmit({
@@ -66,9 +69,20 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
   }, []);
 
   return (
-    <div className="grid grid-cols-6 p-[2rem]">
-      <CenterChildren className="col-span-6 md:col-span-3">
-        <Typography variant="h3">{calendarTitle}</Typography>
+    <div
+      className={
+        'grid grid-cols-6 gap-[0.5rem] rounded-3xl border-[0.25rem] border-secondary-main p-[2rem]'
+      }
+    >
+      <CenterChildren
+        className={clsx('col-span-6 flex-col gap-[0.5rem]', {
+          'md:col-span-3': formIsVisible,
+          'md:col-span-6': !formIsVisible,
+        })}
+      >
+        <Typography bold variant="h3">
+          {calendarTitle}
+        </Typography>
         <Calendar
           onChangeSelectedDate={handleCalendarChange}
           onChangeTime={handleChangeTime}
@@ -79,10 +93,20 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
           locale={locale}
         />
       </CenterChildren>
-      <CenterChildren className="none col-span-1 md:flex">
-        <Divider height={'100%'} width={'0.5rem'} color="secondary" />
+      <CenterChildren
+        className={clsx('none', {
+          'md:col-span-1 md:flex': formIsVisible,
+          hidden: !formIsVisible,
+        })}
+      >
+        <Divider height={'70%'} width={'0.25rem'} color="secondary" />
       </CenterChildren>
-      <CenterChildren className="col-span-6 md:col-span-2">
+      <CenterChildren
+        className={clsx('col-span-6', {
+          'md:col-span-2': formIsVisible,
+          'md:hidden': !formIsVisible,
+        })}
+      >
         <ReservationInfo
           emailLabel={emailLabel}
           firstNameLabel={firstNameLabel}

@@ -22,6 +22,7 @@ const meta = {
     locale: 'ar-sa',
     times: ['من ٦ ص إلى ١٢ م', 'من ١٢ م إلى ٦ م', 'من ٦ م إلى ١٢ ص'],
     onSubmit: fn(),
+    calendarTitle: 'موعد الاتصال بك',
   },
 } satisfies Meta<typeof ReservationForm>;
 
