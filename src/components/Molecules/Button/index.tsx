@@ -11,6 +11,7 @@ export interface ButtonProps extends WithClassName {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined
   ) => void;
   disabled?: boolean;
+  disableHoverScale?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -23,6 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   },
   onClick,
   disabled,
+  disableHoverScale,
 }) => {
   return (
     <button
@@ -31,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
       className={clsx(
         'rounded px-6 py-4 transition-all duration-300',
         {
-          'hover:scale-110': !disabled,
+          'hover:scale-110': !disabled && !disableHoverScale,
         },
         {
           'bg-primary-main hover:bg-primary-dark':
@@ -41,6 +43,7 @@ const Button: React.FC<ButtonProps> = ({
           'bg-white hover:bg-grey-light': color === 'white' && !disabled,
           'bg-black hover:bg-grey-main': color === 'black' && !disabled,
           'cursor-not-allowed bg-grey-main': disabled,
+          'bg-grey-light': color === 'grey' && !disabled,
         },
         className
       )}

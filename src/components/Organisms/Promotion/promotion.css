@@ -1,0 +1,45 @@
+.promo-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  @apply fill-primary-main;
+}
+
+.promo-button {
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+  @apply bg-primary-main text-white;
+}
+
+.promo-title {
+  position: absolute;
+  @apply text-primary-main;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+#promotion {
+  width: 22.5rem;
+  height: 22.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid gray;
+  @apply rounded-lg;
+}
+
+#promotion::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: white;
+}
+
+#promotion:hover > .promo-button {
+  bottom: 1rem;
+}
