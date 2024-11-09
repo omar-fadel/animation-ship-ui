@@ -15,7 +15,7 @@ export interface ReservationData {
 }
 
 export interface ReservationInfoProps extends React.HTMLProps<HTMLFormElement> {
-  inputsProps: inputProps;
+  inputsProps?: inputProps;
   onReservation: (reservationData: ReservationData) => void;
   formTitle: string;
   firstNameLabel: string;
