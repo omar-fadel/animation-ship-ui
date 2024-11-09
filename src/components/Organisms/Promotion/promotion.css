@@ -4,6 +4,7 @@
   right: 1rem;
   z-index: 10;
   @apply fill-primary-main;
+  transition: fill 0.6s ease;
 }
 
 .promo-button {
@@ -22,6 +23,10 @@
   left: 50%;
   z-index: 10;
   transform: translate(-50%, -50%);
+  transition:
+    font-size 0.3s ease,
+    top 0.3s ease,
+    left 0.3s ease;
 }
 
 #promotion {
@@ -38,8 +43,23 @@
   position: absolute;
   inset: 0;
   background-color: white;
+  transition: opacity 0.6s ease;
 }
 
 #promotion:hover > .promo-button {
   bottom: 1rem;
+}
+
+#promotion:hover > .promo-icon {
+  @apply fill-white;
+}
+
+#promotion:hover > .promo-title {
+  top: 2rem;
+  left: 2.5rem;
+  @apply text-body1 font-bold !important;
+}
+
+#promotion:hover::after {
+  opacity: 0;
 }
