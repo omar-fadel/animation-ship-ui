@@ -29,7 +29,7 @@ export interface ReservationInfoProps extends React.HTMLProps<HTMLFormElement> {
 }
 
 const ReservationInfo: React.FC<ReservationInfoProps> = ({
-  inputsProps,
+  inputsProps = {},
   formTitle,
   className,
   emailLabel,
