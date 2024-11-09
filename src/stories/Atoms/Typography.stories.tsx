@@ -68,3 +68,10 @@ export const Body2: StoryObj<typeof Typography> = {
     children: 'Hello, World! body2',
   },
 };
+
+export const Label: StoryObj<typeof Typography> = {
+  args: {
+    variant: 'label',
+    children: 'Hello, World! label',
+  },
+};

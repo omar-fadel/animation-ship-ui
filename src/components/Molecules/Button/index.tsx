@@ -10,6 +10,7 @@ export interface ButtonProps extends WithClassName {
   onClick: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined
   ) => void;
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,23 +22,43 @@ const Button: React.FC<ButtonProps> = ({
     color: 'black',
   },
   onClick,
+  disabled,
 }) => {
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       className={clsx(
-        'rounded px-6 py-4 transition-all duration-300 hover:scale-110',
+        'rounded px-6 py-4 transition-all duration-300',
         {
-          'bg-primary-main hover:bg-primary-dark': color === 'primary',
-          'bg-secondary-main hover:bg-secondary-dark': color === 'secondary',
-          'bg-white hover:bg-grey-light': color === 'white',
-          'bg-black hover:bg-grey-main': color === 'black',
+          'hover:scale-110': !disabled,
+        },
+        {
+          'bg-primary-main hover:bg-primary-dark':
+            color === 'primary' && !disabled,
+          'bg-secondary-main hover:bg-secondary-dark':
+            color === 'secondary' && !disabled,
+          'bg-white hover:bg-grey-light': color === 'white' && !disabled,
+          'bg-black hover:bg-grey-main': color === 'black' && !disabled,
+          'cursor-not-allowed bg-grey-main': disabled,
         },
         className
       )}
       color={color}
     >
-      <Typography {...textProps}>{text}</Typography>
+      <Typography
+        {...textProps}
+        className={clsx(
+          {
+            'text-white':
+              color === 'black' || color === 'primary' || color === 'secondary',
+            'text-black': color === 'white',
+          },
+          textProps.className
+        )}
+      >
+        {text}
+      </Typography>
     </button>
   );
 };
