@@ -1,5 +1,6 @@
 import Typography from '@atoms/Typography';
 import Color from '@customTypes/Color';
+import DateLocals from '@customTypes/DateLocales';
 import ClickableIcon from '@molecules/ClickableIcon';
 import SpaceBetween from '@templates/SpaceBetween';
 import clsx from 'clsx';
@@ -12,6 +13,7 @@ export interface MonthSelectorProps {
   textColor?: Color;
   iconWidth?: string;
   iconHeight?: string;
+  locale?: DateLocals;
 }
 
 const MonthSelector: React.FC<MonthSelectorProps> = ({

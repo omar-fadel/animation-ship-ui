@@ -1,4 +1,5 @@
 import Color from '@customTypes/Color';
+import DateLocals from '@customTypes/DateLocales';
 import Button from '@molecules/Button';
 import SpaceBetween from '@templates/SpaceBetween';
 import englishToArabicNumerals from '@utils/englishToArabicNumerals';
@@ -10,6 +11,7 @@ export interface TimeSelectionProps {
   selectedTime: string;
   onChangeSelectedTime: (time: string) => void;
   color: Color;
+  locale?: DateLocals;
 }
 
 const TimeSelection: React.FC<TimeSelectionProps> = ({
@@ -17,6 +19,7 @@ const TimeSelection: React.FC<TimeSelectionProps> = ({
   onChangeSelectedTime,
   selectedTime,
   times,
+  locale = 'en-us',
 }) => {
   return (
     <SpaceBetween className="gap-[1rem]">
@@ -25,7 +28,7 @@ const TimeSelection: React.FC<TimeSelectionProps> = ({
           key={time}
           color={color}
           onClick={() => onChangeSelectedTime(time)}
-          text={englishToArabicNumerals(time)}
+          text={locale === 'ar-sa' ? englishToArabicNumerals(time) : time}
           className={clsx(
             'py-6',
             {

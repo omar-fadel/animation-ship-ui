@@ -1,5 +1,6 @@
 import Typography from '@atoms/Typography';
 import Color from '@customTypes/Color';
+import DateLocals from '@customTypes/DateLocales';
 import CenterChildren from '@templates/CenterChildren';
 import englishToArabicNumerals from '@utils/englishToArabicNumerals';
 import clsx from 'clsx';
@@ -13,6 +14,7 @@ export interface DaysNumbersProps {
   selectedDate?: Dayjs;
   buttonClassName?: string;
   onChangeSelectedDay: (day: number) => void;
+  locale?: DateLocals;
 }
 
 const DaysNumbers: React.FC<DaysNumbersProps> = ({
@@ -22,6 +24,7 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
   selectedDate,
   color = 'white',
   buttonClassName,
+  locale = 'en-us',
 }) => {
   const firstDayInTheMonth = useMemo(() => {
     const date = dayjs().month(month).date(1).year(year);
@@ -108,7 +111,9 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
               )}
               variant="body1"
             >
-              {englishToArabicNumerals(index + 1)}
+              {locale === 'ar-sa'
+                ? englishToArabicNumerals(index + 1)
+                : index + 1}
             </Typography>
           </button>
         </CenterChildren>

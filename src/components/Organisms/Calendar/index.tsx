@@ -1,5 +1,6 @@
 import Divider from '@atoms/Divider';
 import Typography from '@atoms/Typography';
+import DateLocals from '@customTypes/DateLocales';
 import DaysNumbers from '@molecules/DaysNumbers';
 import DaysOfTheWeek from '@molecules/DaysOfTheWeek';
 import MonthSelector from '@molecules/MonthSelector';
@@ -13,6 +14,7 @@ export interface CalendarProps {
   onChangeTime: (time: string) => void;
   selectedTime: string;
   timeHeader: string;
+  locale?: DateLocals;
 }
 
 const Calendar: React.FC<CalendarProps> = ({
@@ -22,6 +24,7 @@ const Calendar: React.FC<CalendarProps> = ({
   selectedTime,
   timeHeader,
   times,
+  locale = 'en-us',
 }) => {
   const handleGoNextMonth = () => {
     const today = dayjs();
@@ -49,6 +52,7 @@ const Calendar: React.FC<CalendarProps> = ({
           onChangeSelectedDay={(day) => {
             onChangeSelectedDate(selectedDate.date(day));
           }}
+          locale={locale}
           selectedDate={selectedDate}
         />
       </div>
@@ -57,6 +61,7 @@ const Calendar: React.FC<CalendarProps> = ({
         {timeHeader}
       </Typography>
       <TimeSelection
+        locale={locale}
         color="white"
         selectedTime={selectedTime}
         onChangeSelectedTime={onChangeTime}
