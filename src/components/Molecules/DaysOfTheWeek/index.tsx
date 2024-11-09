@@ -23,6 +23,7 @@ const DaysOfTheWeek: React.FC<DaysOfTheWeekProps> = ({
     <>
       {dayjs.weekdays().map((day) => (
         <Typography
+          key={`day-${day}`}
           align="center"
           className={className}
           variant={variant}

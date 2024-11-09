@@ -8,7 +8,9 @@ import ReservationInfo, {
 import CenterChildren from '@templates/CenterChildren';
 import clsx from 'clsx';
 import dayjs, { Dayjs } from 'dayjs';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import 'dayjs/locale/ar-sa';
+import 'dayjs/locale/en';
 
 export interface ReservationFormProps
   extends Pick<
@@ -47,6 +49,10 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
   const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
   const [selectedTime, setSelectedTime] = useState<string>('');
 
+  useEffect(() => {
+    dayjs.locale(locale);
+  }, [locale]);
+
   const formIsVisible = useMemo(() => !!selectedTime, [selectedTime]);
 
   const handleFormSubmit = useCallback(
@@ -71,7 +77,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
   return (
     <div
       className={
-        'grid grid-cols-6 gap-[0.5rem] rounded-3xl border-[0.25rem] border-secondary-main p-[2rem]'
+        'grid grid-cols-6 gap-[0.5rem] rounded-3xl border-[0.25rem] border-secondary-main bg-white p-[2rem]'
       }
     >
       <CenterChildren
