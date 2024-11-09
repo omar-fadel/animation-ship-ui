@@ -1,4 +1,4 @@
-import Icons, { IconName } from '@atoms/Icons';
+import { IconName } from '@atoms/Icons';
 import Overlay from '@atoms/Overlay';
 import Typography from '@atoms/Typography';
 import Color from '@customTypes/Color';
@@ -63,6 +63,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({
         <Stack className="gap-0">
           {items.map((item) => (
             <button
+              key={item.id}
               onClick={() => {
                 onChangeActiveItem(item.id);
               }}

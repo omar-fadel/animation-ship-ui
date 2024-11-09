@@ -36,15 +36,16 @@ const Overlay: React.FC<Overlay> = ({
     <VariableContainerComponent
       component={component}
       className={clsx(
-        'fixed inset-0 z-50 h-screen w-screen transition-all duration-300 ease-in-out',
+        'fixed z-50 h-screen w-screen transition-all duration-300 ease-in-out',
         {
           'bg-primary-main': color === 'primary',
           'bg-secondary-main': color === 'secondary',
           'bg-white': color === 'white',
           'bg-black': color === 'black',
           'bg-grey-light': color === 'grey',
-          '-left-[100%]': !open,
+          'bottom-0-0 -left-[100%] top-0': !open,
           'rtl:left-[100%]': !open,
+          'inset-0': open,
         },
         className
       )}

@@ -2,7 +2,9 @@ import React from 'react';
 import { TextComponent } from '@customTypes/TextVariant';
 
 export interface VariableComponentProps
-  extends React.HTMLAttributes<HTMLHeadingElement> {
+  extends React.HTMLProps<
+    HTMLHeadingElement & HTMLLabelElement & HTMLParagraphElement
+  > {
   component: TextComponent;
   children?: React.ReactNode;
 }

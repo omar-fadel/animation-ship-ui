@@ -15,14 +15,10 @@ const meta = {
 export default meta;
 
 export const English: StoryObj<typeof meta> = {
-  args: {
-    locale: 'en-us',
-  },
+  args: {},
 };
 
 export const Arabic: StoryObj<typeof meta> = {
-  args: {
-    locale: 'ar-sa',
-  },
+  args: {},
   decorators: [ArabicLocaleDecorator],
 };

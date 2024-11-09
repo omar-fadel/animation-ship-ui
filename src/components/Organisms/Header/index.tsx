@@ -1,7 +1,6 @@
 import LanguageButton from '@molecules/LanguageButton';
 import HeaderList, { HeaderListProps } from '@organisms/HeaderList';
 import HeaderMenu from '@organisms/HeaderMenu';
-import { Container } from '@templates/Container';
 import ThreeColumnFullSizeMid from '@templates/ThreeColumnFullSizeMid';
 import { ReactNode } from 'react';
 
@@ -19,28 +18,26 @@ const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
 }) => {
   return (
-    <nav>
-      <Container component="nav" backgroundColor="white" className="px-4 py-6">
-        <ThreeColumnFullSizeMid
-          startComponent={
-            <button className="transition-all duration-200 ease-in hover:scale-105">
-              {logo}
-            </button>
-          }
-          middleComponent={
-            <>
-              <HeaderList {...headerList} />
-              <HeaderMenu {...headerList} />
-            </>
-          }
-          endComponent={
-            <LanguageButton
-              language={currentLanguage}
-              onClick={onLanguageChange}
-            />
-          }
-        />
-      </Container>
+    <nav className="py-[2rem]">
+      <ThreeColumnFullSizeMid
+        startComponent={
+          <button className="transition-all duration-200 ease-in hover:scale-105">
+            {logo}
+          </button>
+        }
+        middleComponent={
+          <>
+            <HeaderList {...headerList} />
+            <HeaderMenu {...headerList} />
+          </>
+        }
+        endComponent={
+          <LanguageButton
+            language={currentLanguage}
+            onClick={onLanguageChange}
+          />
+        }
+      />
     </nav>
   );
 };
