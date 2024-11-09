@@ -1,4 +1,5 @@
 import Divider from '@atoms/Divider';
+import Icons from '@atoms/Icons';
 import Typography from '@atoms/Typography';
 import DateLocals from '@customTypes/DateLocales';
 import DaysNumbers from '@molecules/DaysNumbers';
@@ -38,7 +39,13 @@ const Calendar: React.FC<CalendarProps> = ({
     onChangeSelectedDate(selectedDate.subtract(1, 'month'));
   };
   return (
-    <div className="flex flex-col items-center justify-center gap-[2rem] rounded-2xl bg-primary-main p-[1rem]">
+    <div className="relative flex flex-col items-center justify-center gap-[2rem] rounded-2xl bg-primary-main p-[1rem]">
+      <Icons
+        iconName="Date"
+        width={'0.9375rem'}
+        height={'1.0625rem'}
+        className="absolute end-[1.5rem] top-[1.5rem]"
+      />
       <MonthSelector
         month={selectedDate.format('MMMM')}
         onGoNext={handleGoNextMonth}

@@ -24,6 +24,7 @@ const componentMap: Record<TextVariant, TextComponent> = {
   h6: 'h6',
   body1: 'p',
   body2: 'p',
+  label: 'label',
 };
 
 const Typography: React.FC<TypographyProps> = ({

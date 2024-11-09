@@ -6,6 +6,15 @@ export type TextVariant =
   | 'h5'
   | 'h6'
   | 'body1'
-  | 'body2';
+  | 'body2'
+  | 'label';
 
-export type TextComponent = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export type TextComponent =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'p'
+  | 'label';

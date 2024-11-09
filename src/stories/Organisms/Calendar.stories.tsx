@@ -12,7 +12,7 @@ const meta = {
   },
   decorators: [ArabicLocaleDecorator],
   args: {
-    selectedDate: dayjs().add(1, 'month'),
+    selectedDate: dayjs().add(4, 'day'),
     onChangeSelectedDate: fn(),
     onChangeTime: fn(),
     selectedTime: 'من 8 ص إلى 12 م',

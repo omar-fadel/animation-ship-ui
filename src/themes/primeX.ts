@@ -68,6 +68,12 @@ const primeX: Config['theme'] = {
           fontWeight: 'var(--font-weight-body2, 400)',
         },
       ],
+      label: [
+        'var(--font-size-label, 0.75rem)',
+        {
+          fontWeight: 'var(--font-weight-label, 400)',
+        },
+      ],
     },
   },
 };
