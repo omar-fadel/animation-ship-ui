@@ -30,7 +30,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
   }, [id, onSubscribe]);
   return (
     <div className="grid h-full grid-cols-3 grid-rows-1">
-      <div className="z-10 col-start-1 col-end-2 row-start-1 -mr-[3rem] flex flex-col justify-end">
+      <div className="z-10 col-start-1 col-end-2 row-start-1 flex flex-col justify-end ltr:-ml-[3rem] rtl:-mr-[3rem]">
         {image}
       </div>
       <div
@@ -52,7 +52,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
               <Typography bold color={color} inverseColor variant="h3">
                 {title}
               </Typography>
-              <ul>
+              <ul className="list-disc text-white">
                 {points.map((point) => (
                   <li key={point}>
                     <Typography color={color} inverseColor variant="body2">
