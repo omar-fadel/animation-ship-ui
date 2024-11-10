@@ -50,7 +50,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
   const [selectedTime, setSelectedTime] = useState<string>('');
 
   useEffect(() => {
-    dayjs.locale(locale);
+    if (locale) setSelectedDate((O) => O.locale(locale));
   }, [locale]);
 
   const formIsVisible = useMemo(() => !!selectedTime, [selectedTime]);

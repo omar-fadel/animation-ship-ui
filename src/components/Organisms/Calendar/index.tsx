@@ -44,7 +44,7 @@ const Calendar: React.FC<CalendarProps> = ({
         iconName="Date"
         width={'0.9375rem'}
         height={'1.0625rem'}
-        className="absolute start-[1.5rem] top-[1.5rem]"
+        className="absolute start-[1.5rem] top-[1.5rem] fill-white"
       />
       <MonthSelector
         month={selectedDate.format('MMMM')}

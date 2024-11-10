@@ -6,12 +6,14 @@ import localeData from 'dayjs/plugin/localeData';
 import 'dayjs/locale/ar-sa';
 import 'dayjs/locale/en';
 import { WithClassName } from '@customTypes/WithClassName';
+import DateLocals from '@customTypes/DateLocales';
 
 dayjs.extend(localeData);
 
 export interface DaysOfTheWeekProps extends WithClassName {
   color?: Color;
   variant?: TextVariant;
+  locale?: DateLocals;
 }
 
 const DaysOfTheWeek: React.FC<DaysOfTheWeekProps> = ({
