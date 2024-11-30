@@ -25,7 +25,7 @@ const LanguageButton: React.FC<LanguageButtonProps> = ({
     <CenteredChildren className={clsx(`h-[2.375rem] w-[2.375rem]`, className)}>
       <button
         className={clsx(
-          'transition-all duration-100 ease-in-out hover:scale-110',
+          'transition-all duration-100 ease-in-out',
           buttonClassName
         )}
         onClick={onClick}

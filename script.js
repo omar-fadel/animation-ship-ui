@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path';
 
-const sourceDir = path.resolve('C:/Work/animation-ship-ui/dist');
+const sourceDir = path.resolve('C:\\Work\\Hamdy\\animation-ship-ui\\dist');
 const targetDir = path.resolve(
-  'C:/Work/prime-x/node_modules/animation-ship-components/dist'
+  'C:\\Work\\Hamdy\\prime-x\\node_modules\\animation-ship-components\\dist'
 );
 
 async function copyDistFolder() {

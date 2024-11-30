@@ -34,7 +34,7 @@ const ContactText: React.FC<ContactTextProps> = ({
   return (
     <div
       className={clsx(
-        'flex cursor-pointer items-center gap-[0.6875rem] transition-all duration-300 ease-in-out hover:scale-110',
+        'flex cursor-pointer items-center gap-[0.6875rem] transition-all duration-300 ease-in-out',
         {
           contactTextWhite: color === 'white',
           contactTextBlack: color === 'black',

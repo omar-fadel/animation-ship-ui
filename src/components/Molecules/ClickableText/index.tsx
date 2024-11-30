@@ -36,7 +36,7 @@ const ClickableText: React.FC<ClickableTextProps> = ({
         variant={textPropsVariant || variant}
         color={color}
         className={clsx(
-          'transition-all duration-300 hover:scale-110 hover:cursor-pointer',
+          'transition-all duration-300 hover:cursor-pointer',
           {
             'hover:text-primary-light': color === 'primary',
             'hover:text-secondary-dark': color === 'secondary',

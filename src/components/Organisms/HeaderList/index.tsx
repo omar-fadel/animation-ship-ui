@@ -9,6 +9,7 @@ export type HeaderItem = {
 
 export interface HeaderListProps {
   items: HeaderItem[];
+  callToAction: HeaderItem;
   activeItem: string;
   containerClassName?: string;
   buttonClassName?: string;
@@ -20,6 +21,7 @@ const HeaderList: React.FC<HeaderListProps> = ({
   containerClassName,
   activeItem,
   onChangeActiveItem,
+  callToAction,
 }) => {
   return (
     <SpaceBetween
@@ -36,6 +38,15 @@ const HeaderList: React.FC<HeaderListProps> = ({
           text={item.text}
         />
       ))}
+      <HeaderButton
+        id={callToAction.id}
+        onClick={() => {
+          onChangeActiveItem(callToAction.id);
+        }}
+        text={callToAction.text}
+        isActive={false}
+        className="rounded-full bg-primary-main font-black hover:bg-primary-dark text-white"
+      />
     </SpaceBetween>
   );
 };

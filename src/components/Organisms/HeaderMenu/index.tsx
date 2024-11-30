@@ -70,7 +70,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({
             >
               <Typography
                 className={clsx(
-                  'my-2 p-4 transition-all duration-300 ease-in-out hover:scale-110',
+                  'my-2 p-4 transition-all duration-300 ease-in-out',
                   {
                     'hover:bg-white': activeBgColor === 'white',
                     'hover:bg-black': activeBgColor === 'black',

@@ -20,5 +20,6 @@ export const Default: StoryObj<typeof meta> = {
       { text: 'Contact', id: 'contact' },
     ],
     activeItem: 'home',
+    callToAction: { text: 'Sign Up', id: 'signup' },
   },
 };

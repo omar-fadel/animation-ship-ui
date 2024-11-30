@@ -28,7 +28,7 @@ const SocialMediaIcon: React.FC<SocialMediaIconProps> = ({
   iconClassName,
 }) => {
   const className = clsx(
-    'transition-all duration-300 ease-in-out hover:scale-110',
+    'transition-all duration-300 ease-in-out',
     {
       'fill-white hover:fill-primary-main': color === 'white',
       'fill-black hover:fill-grey-main': color === 'black',

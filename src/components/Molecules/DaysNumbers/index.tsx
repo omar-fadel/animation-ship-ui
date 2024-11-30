@@ -65,7 +65,7 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
               onChangeSelectedDay(index + 1);
             }}
             className={clsx(
-              'h-[3rem] w-[3rem] rounded-full hover:scale-105',
+              'h-[3rem] w-[3rem] rounded-full',
               {
                 'border-2': isToday(index + 1),
               },

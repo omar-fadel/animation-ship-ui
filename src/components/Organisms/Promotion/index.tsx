@@ -44,7 +44,6 @@ const Promotion: React.FC<PromotionProps> = ({
         {title}
       </Typography>
       <Button
-        disableHoverScale
         className="promo-button"
         color="grey"
         text={promotionText}

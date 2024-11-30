@@ -34,7 +34,7 @@ const ClickableIcon: React.FC<ClickableIconProps> = ({
         iconName={iconName}
         iconColor={color}
         className={clsx(
-          'transition-all hover:scale-110 hover:cursor-pointer',
+          'transition-all hover:cursor-pointer',
           iconClassName
         )}
         {...restOfIconProps}
