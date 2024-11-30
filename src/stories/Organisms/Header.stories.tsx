@@ -18,6 +18,7 @@ const meta = {
         { text: 'Contact', id: 'contact' },
       ],
       activeItem: 'home',
+      callToAction: { text: 'Sign Up', id: 'sign-up' },
     },
     currentLanguage: 'en',
     onLanguageChange: fn(),
