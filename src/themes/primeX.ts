@@ -7,6 +7,9 @@ const primeX: Config['theme'] = {
       md: '904px',
       lg: '1440px',
     },
+    borderRadius: {
+      '1xl': '0.5rem', // Change '12px' to your desired pixel value
+    },
     colors: {
       primary: {
         light: 'var(--color-primary-light, #FFD7D9)',
