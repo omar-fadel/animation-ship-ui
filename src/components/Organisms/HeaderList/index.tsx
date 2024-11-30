@@ -43,9 +43,10 @@ const HeaderList: React.FC<HeaderListProps> = ({
         onClick={() => {
           onChangeActiveItem(callToAction.id);
         }}
+        disableUnderline
         text={callToAction.text}
         isActive={false}
-        className="rounded-full bg-primary-main font-black hover:bg-primary-dark text-white"
+        className="rounded-full bg-primary-main font-black text-white hover:bg-primary-dark"
       />
     </SpaceBetween>
   );

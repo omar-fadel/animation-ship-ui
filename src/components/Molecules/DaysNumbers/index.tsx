@@ -52,6 +52,13 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
     );
   };
 
+  const isDisabled = (day: number) => {
+    const today = dayjs();
+    return (
+      day < today.date() && month === today.month() && year === today.year()
+    );
+  };
+
   return (
     <>
       {Array.from({ length: firstDayInTheMonth }).map((_, index) => (
@@ -64,8 +71,14 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
             onClick={() => {
               onChangeSelectedDay(index + 1);
             }}
+            disabled={isDisabled(index + 1)}
             className={clsx(
               'h-[3rem] w-[3rem] rounded-full',
+              {
+                'hover:border-[0.10rem] hover:border-white': !isDisabled(
+                  index + 1
+                ),
+              },
               {
                 'border-2': isToday(index + 1),
               },
@@ -97,16 +110,31 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
                     (color === 'black' ||
                       color === 'primary' ||
                       color === 'secondary') &&
-                    isActive(index + 1),
+                    isActive(index + 1) &&
+                    !isDisabled(index + 1),
+                  'text-black': isDisabled(index + 1),
                 },
                 {
-                  'text-white': color === 'white' && !isActive(index + 1),
-                  'text-black': color === 'black' && !isActive(index + 1),
+                  'text-white':
+                    color === 'white' &&
+                    !isActive(index + 1) &&
+                    !isDisabled(index + 1),
+                  'text-black':
+                    color === 'black' &&
+                    !isActive(index + 1) &&
+                    !isDisabled(index + 1),
                   'text-primary-main':
-                    color === 'primary' && !isActive(index + 1),
+                    color === 'primary' &&
+                    !isActive(index + 1) &&
+                    !isDisabled(index + 1),
                   'text-secondary-main':
-                    color === 'secondary' && !isActive(index + 1),
-                  'text-grey-main': color === 'grey' && !isActive(index + 1),
+                    color === 'secondary' &&
+                    !isActive(index + 1) &&
+                    !isDisabled(index + 1),
+                  'text-grey-main':
+                    color === 'grey' &&
+                    !isActive(index + 1) &&
+                    !isDisabled(index + 1),
                 }
               )}
               variant="body1"

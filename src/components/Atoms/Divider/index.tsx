@@ -8,6 +8,8 @@ export interface DividerProps {
   height: string | number;
   color?: Color;
   component?: ContainerVariant;
+  id?: string;
+  className?: string;
 }
 
 const Divider: React.FC<DividerProps> = ({
@@ -15,6 +17,8 @@ const Divider: React.FC<DividerProps> = ({
   component,
   height,
   width,
+  id,
+  className,
 }) => {
   return (
     <VariableContainerComponent
@@ -22,6 +26,7 @@ const Divider: React.FC<DividerProps> = ({
         width,
         height,
       }}
+      id={id}
       component={component}
       className={clsx('rounded-lg', {
         'bg-primary-main': color === 'primary',
@@ -29,6 +34,7 @@ const Divider: React.FC<DividerProps> = ({
         'bg-black': color === 'black',
         'bg-white': color === 'white',
         'bg-grey-main': color === 'grey',
+        className,
       })}
     />
   );

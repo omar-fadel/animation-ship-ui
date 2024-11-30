@@ -35,7 +35,7 @@ const Calendar: React.FC<CalendarProps> = ({
 
   const handleGoPreviousMonth = () => {
     const today = dayjs();
-    if (selectedDate.month() - today.month() === -1) return;
+    if (selectedDate.month() - today.month() === 0) return;
     onChangeSelectedDate(selectedDate.subtract(1, 'month'));
   };
   return (

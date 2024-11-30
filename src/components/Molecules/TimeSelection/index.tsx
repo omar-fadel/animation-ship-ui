@@ -41,9 +41,9 @@ const TimeSelection: React.FC<TimeSelectionProps> = ({
             }
           )}
           textProps={{
-            variant: 'body1',
+            variant: 'body2',
             color: selectedTime === time ? 'secondary' : 'secondary',
-            bold: true,
+            bold: false,
           }}
         />
       ))}

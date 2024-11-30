@@ -10,7 +10,10 @@ import clsx from 'clsx';
 import { useCallback, useState } from 'react';
 
 export interface HeaderMenuProps
-  extends Pick<HeaderListProps, 'activeItem' | 'items' | 'onChangeActiveItem'> {
+  extends Pick<
+    HeaderListProps,
+    'activeItem' | 'items' | 'onChangeActiveItem' | 'callToAction'
+  > {
   hamburgerIconName?: IconName;
   hamburgerIconProps?: React.SVGProps<SVGSVGElement>;
   hamburgerIconColor?: Color;
@@ -25,6 +28,7 @@ export interface HeaderMenuProps
 const HeaderMenu: React.FC<HeaderMenuProps> = ({
   activeItem,
   items,
+  callToAction,
   onChangeActiveItem,
   hamburgerIconName = 'Hamburger',
   hamburgerIconProps = {},
@@ -61,10 +65,11 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({
       />
       <Overlay onClose={handleToggleMenu} open={showMenu} color={overlayColor}>
         <Stack className="gap-0">
-          {items.map((item) => (
+          {[...items, callToAction].map((item) => (
             <button
               key={item.id}
               onClick={() => {
+                setShowMenu(false);
                 onChangeActiveItem(item.id);
               }}
             >

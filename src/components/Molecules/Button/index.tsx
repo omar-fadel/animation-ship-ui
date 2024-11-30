@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
       className={clsx(
-        'rounded px-6 py-4 transition-all duration-300',
+        'rounded px-6 py-4',
         {
           'bg-primary-main hover:bg-primary-dark':
             color === 'primary' && !disabled,
