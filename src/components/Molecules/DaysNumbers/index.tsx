@@ -105,13 +105,16 @@ const DaysNumbers: React.FC<DaysNumbersProps> = ({
                 {
                   'text-black':
                     (color === 'white' || color === 'grey') &&
-                    isActive(index + 1),
+                    isActive(index + 1) &&
+                    !isDisabled(index + 1),
                   'text-white':
                     (color === 'black' ||
                       color === 'primary' ||
                       color === 'secondary') &&
                     isActive(index + 1) &&
                     !isDisabled(index + 1),
+                },
+                {
                   'text-black': isDisabled(index + 1),
                 },
                 {
