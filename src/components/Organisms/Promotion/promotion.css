@@ -63,6 +63,7 @@
 #promotion:hover > .promo-title h2 {
   @apply text-white !important;
   @apply text-body1 font-bold !important;
+  @apply text-start !important;
 }
 
 #promotion:hover::after {

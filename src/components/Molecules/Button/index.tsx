@@ -45,6 +45,9 @@ const Button: React.FC<ButtonProps> = ({
           'bg-grey-light': color === 'grey' && !disabled,
         },
         backgroundHoverColor && !disabled && `hover:bg-${backgroundHoverColor}`,
+        textHoverColor &&
+          !disabled &&
+          `buttonText-hover:text-${textHoverColor}`,
         className
       )}
       color={color}
@@ -52,12 +55,12 @@ const Button: React.FC<ButtonProps> = ({
       <Typography
         {...textProps}
         className={clsx(
+          'buttonText',
           {
             'text-white':
               color === 'black' || color === 'primary' || color === 'secondary',
             'text-black': color === 'white',
           },
-          textHoverColor && !disabled && `hover:text-${textHoverColor}`,
           textProps.className
         )}
       >
