@@ -44,6 +44,8 @@ const Promotion: React.FC<PromotionProps> = ({
         <Typography variant="h2">{title}</Typography>
       </div>
       <Button
+        backgroundHoverColor={'black'}
+        textHoverColor="white"
         className="promo-button"
         color="grey"
         text={promotionText}

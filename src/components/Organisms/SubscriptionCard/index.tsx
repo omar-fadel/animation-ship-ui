@@ -64,6 +64,8 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
               <CenterChildren className="p-[1rem]">
                 <Button
                   className="w-full"
+                  textHoverColor="white"
+                  backgroundHoverColor="black"
                   onClick={handleSubscribe}
                   color="white"
                   text={buttonText}
