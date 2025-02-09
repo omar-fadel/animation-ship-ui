@@ -49,7 +49,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({
   return (
     <EndChildren
       className={clsx(
-        'relative flex w-full px-[1rem] sm:hidden',
+        'relative flex w-full px-[1rem] md:hidden',
         menuContainerClassName
       )}
     >

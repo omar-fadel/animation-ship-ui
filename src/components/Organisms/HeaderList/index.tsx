@@ -25,7 +25,7 @@ const HeaderList: React.FC<HeaderListProps> = ({
 }) => {
   return (
     <SpaceBetween
-      className={clsx('hidden gap-[0.5rem] sm:flex', containerClassName)}
+      className={clsx('hidden gap-[0.5rem] md:flex', containerClassName)}
     >
       {items.map((item) => (
         <HeaderButton
