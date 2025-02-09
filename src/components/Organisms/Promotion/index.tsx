@@ -40,9 +40,9 @@ const Promotion: React.FC<PromotionProps> = ({
         width="2rem"
         height="2rem"
       />
-      <Typography className="promo-title" variant="h2">
-        {title}
-      </Typography>
+      <div className="promo-title w-fit px-4">
+        <Typography variant="h2">{title}</Typography>
+      </div>
       <Button
         className="promo-button"
         color="grey"

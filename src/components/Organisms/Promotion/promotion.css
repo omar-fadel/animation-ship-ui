@@ -20,6 +20,7 @@
   position: absolute;
   @apply text-primary-main;
   top: 50%;
+  width: 20rem !important;
   left: 50%;
   z-index: 10;
   transform: translate(-50%, -50%);
@@ -56,7 +57,10 @@
 
 #promotion:hover > .promo-title {
   top: 2rem;
-  left: 2.5rem;
+  left: 10rem;
+}
+
+#promotion:hover > .promo-title h2 {
   @apply text-white !important;
   @apply text-body1 font-bold !important;
 }
