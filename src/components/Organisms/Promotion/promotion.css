@@ -19,6 +19,8 @@
 .promo-title {
   position: absolute;
   @apply text-primary-main;
+  text-align: center;
+  width: fit-content;
   top: 50%;
   left: 50%;
   z-index: 10;
@@ -55,8 +57,9 @@
 }
 
 #promotion:hover > .promo-title {
-  top: 2rem;
-  left: 2.5rem;
+  top: 1rem;
+  left: 1rem;
+  transform: translate(0,0);
   @apply text-white !important;
   @apply text-body1 font-bold !important;
 }
