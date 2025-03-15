@@ -11,6 +11,8 @@ export interface ButtonProps extends WithClassName {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined
   ) => void;
   disabled?: boolean;
+  textHoverColor?: Color;
+  backgroundHoverColor?: Color;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,6 +23,8 @@ const Button: React.FC<ButtonProps> = ({
     variant: 'h5',
     color: 'black',
   },
+  textHoverColor,
+  backgroundHoverColor,
   onClick,
   disabled,
 }) => {
@@ -40,6 +44,10 @@ const Button: React.FC<ButtonProps> = ({
           'cursor-not-allowed bg-grey-main': disabled,
           'bg-grey-light': color === 'grey' && !disabled,
         },
+        backgroundHoverColor && !disabled && `hover:bg-${backgroundHoverColor}`,
+        textHoverColor &&
+          !disabled &&
+          `buttonText-hover:text-${textHoverColor}`,
         className
       )}
       color={color}
@@ -47,6 +55,7 @@ const Button: React.FC<ButtonProps> = ({
       <Typography
         {...textProps}
         className={clsx(
+          'buttonText',
           {
             'text-white':
               color === 'black' || color === 'primary' || color === 'secondary',

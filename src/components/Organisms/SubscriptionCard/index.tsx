@@ -1,6 +1,5 @@
 import Typography from '@atoms/Typography';
 import Color from '@customTypes/Color';
-import Button from '@molecules/Button';
 import CenterChildren from '@templates/CenterChildren';
 import clsx from 'clsx';
 import { ReactNode, useCallback } from 'react';
@@ -62,12 +61,12 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
                 ))}
               </ul>
               <CenterChildren className="p-[1rem]">
-                <Button
-                  className="w-full"
+                <button
+                  className="w-72 rounded-md bg-white p-4 text-h5 text-black hover:bg-black hover:text-white"
                   onClick={handleSubscribe}
-                  color="white"
-                  text={buttonText}
-                />
+                >
+                  {buttonText}
+                </button>
               </CenterChildren>
             </div>
           </div>

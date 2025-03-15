@@ -1,6 +1,5 @@
 import Icons, { IconName } from '@atoms/Icons';
 import Typography from '@atoms/Typography';
-import Button from '@molecules/Button';
 import { useCallback } from 'react';
 import './promotion.css';
 
@@ -40,15 +39,17 @@ const Promotion: React.FC<PromotionProps> = ({
         width="2rem"
         height="2rem"
       />
-      <Typography className="promo-title" variant="h2">
-        {title}
-      </Typography>
-      <Button
-        className="promo-button"
-        color="grey"
-        text={promotionText}
+      <div className="promo-title w-fit px-4">
+        <Typography align="center" variant="h2">
+          {title}
+        </Typography>
+      </div>
+      <button
+        className="promo-button rounded-md bg-white p-4 text-h5 text-black hover:bg-black hover:text-white"
         onClick={handleClickPromotion}
-      />
+      >
+        {promotionText}
+      </button>
     </div>
   );
 };
