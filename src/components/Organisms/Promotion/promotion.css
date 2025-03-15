@@ -7,6 +7,10 @@
   transition: fill 0.6s ease;
 }
 
+.promo-title-text {
+  font-size: 2rem !important;
+}
+
 .promo-button {
   position: absolute;
   bottom: -10rem;
@@ -57,9 +61,12 @@
 }
 
 #promotion:hover > .promo-title {
-  top: 1rem;
-  left: 1rem;
+  top: 0.5rem;
+  left: 0.5rem;
   transform: translate(0,0);
+}
+
+#promotion:hover > .promo-title h2 {
   @apply text-white !important;
   @apply text-body1 font-bold !important;
   @apply text-start !important;
