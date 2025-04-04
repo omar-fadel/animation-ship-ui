@@ -40,7 +40,7 @@ const Promotion: React.FC<PromotionProps> = ({
         height="2rem"
       />
       <div className="promo-title w-fit px-4">
-        <Typography align="center" variant="h2">
+        <Typography align="center" className="promo-title-text" variant="h2">
           {title}
         </Typography>
       </div>
