@@ -27,6 +27,10 @@ export interface FooterProps {
   reserveButton: string;
   reserveButtonColor?: Color;
   onReserveClick?: () => void;
+  privacyPolicy?: string;
+  termsAndConditions?: string;
+  termsAndConditionsHref?: string;
+  privacyPolicyHref?: string;
 }
 
 interface SectionProps {
@@ -61,6 +65,10 @@ const Footer: React.FC<FooterProps> = ({
   reserveButtonColor = 'white',
   reserveDescription,
   onReserveClick = () => {},
+  privacyPolicy,
+  termsAndConditions,
+  privacyPolicyHref,
+  termsAndConditionsHref,
 }) => {
   return (
     <Container backgroundColor="black">
@@ -79,6 +87,10 @@ const Footer: React.FC<FooterProps> = ({
             className="max-w-[12rem]"
             availableSocialMedia={socialMedia}
             color={textColor}
+            privacyPolicy={privacyPolicy}
+            termsAndConditions={termsAndConditions}
+            privacyPolicyHref={privacyPolicyHref}
+            termsAndConditionsHref={termsAndConditionsHref}
           />
         </Section>
         <Section color={headerColor} title={contactUs}>

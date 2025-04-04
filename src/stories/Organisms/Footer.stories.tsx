@@ -44,5 +44,7 @@ export const Default: StoryObj<typeof meta> = {
     reserveButton: 'Reserve Now Your Free Appointment',
     reserveDescription: 'Reserve a table now to enjoy our delicious food',
     reserveNow: 'Reserve Now',
+    privacyPolicy: 'Privacy Policy',
+    termsAndConditions: 'Terms and Conditions',
   },
 };
